@@ -57,14 +57,21 @@
       letter-spacing: -0.02em;
     }
 
-    img {
-      max-height: 28px;
-      width: auto;
-    }
+    // Reliable logo swap (avoid content:url on <img>)
+    a[href] {
+      display: inline-block;
+      width: 200px;
+      height: 28px;
+      background: url("../img/logo_left.svg") no-repeat left center / contain;
+      overflow: hidden;
 
-    // Single-line lockup: phpMyAdmin - Stygia
-    a[href] img {
-      content: url("../img/logo_left.svg");
+      img {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        display: block;
+      }
     }
   }
 

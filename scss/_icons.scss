@@ -122,6 +122,7 @@ button:hover .icon {
 .ic_b_spatial { @include icon-mask("../img/field-spatial.svg"); }
 .ic_b_index { @include icon-mask("../img/field-index.svg"); }
 .ic_b_index_add { @include icon-mask("../img/index-plus.svg"); }
+.ic_s_tbl { @include icon-mask("../img/table.svg"); }
 
 // --- Users ---
 .ic_b_usradd { @include icon-mask("../img/user-plus.svg"); }
@@ -161,11 +162,6 @@ button:hover .icon {
 }
 .ic_s_cancel { @include icon-mask("../img/s_cancel.svg"); }
 .ic_s_cancel2 { @include icon-mask("../img/s_cancel2.svg"); }
-
-.ic_b_primary,
-.ic_bd_primary {
-  background-color: $accent-green;
-}
 
 // --- Chart & Reports ---
 .ic_b_chart { @include icon-mask("../img/chart.svg"); }
@@ -290,7 +286,17 @@ button:hover .icon {
 .ic_bd_spatial { @include icon-mask("../img/field-spatial.svg"); }
 .ic_bd_unique { @include icon-mask("../img/field-index-unique.svg"); }
 
-.ic_ajax_clock_small { @include icon-mask("../img/spinner.svg"); }
+// Semantic tints AFTER masks (mask mixin resets background-color)
+.ic_b_primary,
+.ic_bd_primary {
+  background-color: $accent-green;
+}
+
+.ic_ajax_clock_small {
+  @include icon-mask("../img/spinner.svg");
+  background-color: $accent-green;
+  animation: stygia-spin 0.7s linear infinite;
+}
 .ic_s_partialtext { @include icon-mask("../img/s_partialtext.svg"); }
 .ic_s_fulltext { @include icon-mask("../img/s_fulltext.svg"); }
 .ic_s_process { @include icon-mask("../img/s_process.svg"); }

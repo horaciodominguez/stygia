@@ -10,6 +10,7 @@ const include = [
   "css",
   "img",
   "fonts",
+  "jquery",
   "scss",
   "docs",
   "theme.json",

@@ -164,3 +164,9 @@ b {
     top: 0;
   }
 }
+
+@keyframes stygia-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

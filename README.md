@@ -16,11 +16,12 @@ A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired
 
 - **Deep dark surfaces** — `#121212` body, stepped elevation for cards and popovers
 - **Stygia green** — `#3ecf8e` accent with a darker primary button (`#006239`) that stays readable
-- **Accessible** — `:focus-visible`, `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`
-- **RTL overrides** — compiled from SCSS tokens, not hardcoded hex
+- **Accessible** — `:focus-visible`, `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`; body/link/button pairs target WCAG AA
+- **RTL** — full `theme.rtl.css` via rtlcss(theme.css) plus Stygia overrides (SQL stays LTR)
 - **Typography** — Inter for UI, JetBrains Mono for SQL (local woff2, no CDN)
 - **SQL editor** — CodeMirror highlighting with five distinct hues (keyword, string, number, comment, error)
 - **Branding** — In-app: single-line `phpMyAdmin - Stygia`; portfolio: Stygia mark alone
+- **jQuery UI** — dark ui-darkness base + Stygia color overrides for datepicker/dialogs
 
 ## Requirements
 
@@ -39,6 +40,7 @@ phpMyAdmin/
         ├── css/
         ├── fonts/
         ├── img/
+        ├── jquery/
         ├── scss/
         ├── theme.json
         └── screen.png
@@ -71,11 +73,13 @@ npm run zip
 
 ```
 stygia/
-├── css/                 # Compiled LTR + RTL + source maps
+├── css/                 # theme.css + theme.rtl.css (rtlcss) + maps
 ├── fonts/               # Inter + JetBrains Mono (OFL)
 ├── img/                 # SVG icons + logo
+├── jquery/              # Dark jQuery UI + images
 ├── scss/
 │   ├── theme.scss       # Entry
+│   ├── _rtl-overrides.scss
 │   ├── _variables.scss  # Design tokens
 │   ├── _fonts.scss
 │   ├── _icons.scss
@@ -122,13 +126,13 @@ Measured on `#121212` unless noted:
 | `#a3a3a3` on `#121212` | ~7.6:1 | Pass (normal) |
 | `#3ecf8e` on `#121212` | ~9.4:1 | Pass (normal) |
 | `#fafafa` on `#006239` | ~7.2:1 | Pass (normal) |
-| `#8a8a8a` on `#121212` | ~6.3:1 | Pass (normal) |
+| `#8a8a8a` on `#121212` | ~5.4:1 | Pass (normal AA) |
 
 Keyboard focus uses a 2px green outline (`:focus-visible`). Reduced motion disables console and hover transitions. This theme cannot inject a skip link into phpMyAdmin HTML; the `.skip-link` class is styled if the host page provides one.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Fonts: SIL Open Font License (see [fonts/README.md](fonts/README.md)).
+MIT — see [LICENSE](LICENSE). Fonts: SIL Open Font License (see [fonts/README.md](fonts/README.md)). jQuery UI dark pack adapted from [BooDark](https://github.com/adorade/boodark) (MIT).
 
 ## Credits
 

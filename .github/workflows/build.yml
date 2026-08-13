@@ -27,7 +27,7 @@ jobs:
       - name: Package zip
         run: |
           mkdir -p dist/stygia
-          cp -r css img fonts scss docs theme.json screen.png README.md LICENSE CHANGELOG.md package.json dist/stygia/
+          cp -r css img fonts jquery scss docs theme.json screen.png README.md LICENSE CHANGELOG.md package.json dist/stygia/
           (cd dist && zip -r ../stygia.zip stygia)
 
       - uses: actions/upload-artifact@v4

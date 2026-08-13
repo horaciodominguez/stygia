@@ -129,6 +129,40 @@ $danger: $color-danger;
 $warning: $color-warning;
 $info: $color-info;
 
+// Remap Bootstrap "light" utilities so .bg-light / .table-light stay dark
+$white: $text-white;
+$gray-100: $bg-surface-4;
+$gray-200: $bg-surface-3;
+$gray-300: $border-stronger;
+$gray-400: $text-disabled;
+$gray-500: $text-muted;
+$gray-600: $text-secondary;
+$gray-700: $bg-surface-2;
+$gray-800: $bg-surface;
+$gray-900: $bg-body;
+$black: #000;
+
+$light: $bg-surface-2;
+$dark: $bg-body;
+
+$primary-text-emphasis: $accent-green-light;
+$secondary-text-emphasis: $text-secondary;
+$success-text-emphasis: $color-success;
+$info-text-emphasis: $color-info;
+$warning-text-emphasis: $color-warning;
+$danger-text-emphasis: $color-danger;
+$light-text-emphasis: $text-primary;
+$dark-text-emphasis: $text-primary;
+
+$primary-bg-subtle: rgba($accent-green, 0.12);
+$secondary-bg-subtle: $bg-surface-2;
+$success-bg-subtle: rgba($color-success, 0.12);
+$info-bg-subtle: rgba($color-info, 0.12);
+$warning-bg-subtle: rgba($color-warning, 0.14);
+$danger-bg-subtle: rgba($color-danger, 0.12);
+$light-bg-subtle: $bg-surface;
+$dark-bg-subtle: $bg-body;
+
 $btn-border-radius: $border-radius-sm;
 $btn-line-height: 1.5;
 $btn-padding-y: 0.4rem;
