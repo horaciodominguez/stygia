@@ -1,0 +1,129 @@
+// ============================================================
+// Stygia — Reboot / Base Element Overrides
+// ============================================================
+
+// Body
+body {
+  text-align: left;
+  background: $bg-body;
+  color: $text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography — Weight 400 for headings, 500 for interactive elements
+h1 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 400;
+  color: $text-secondary;
+  padding: 10px 0 10px 3px;
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+h4, h5, h6 {
+  font-weight: 500;
+}
+
+// Forms
+input,
+select {
+  font-size: 1em;
+}
+
+textarea {
+  font-family: $font-family-monospace;
+  font-size: 1.1em;
+}
+
+// Links
+a {
+  color: $accent-green;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $accent-green-dark;
+  }
+}
+
+// Code — green tinted
+code {
+  color: $accent-green;
+  background: rgba($accent-green, 0.08);
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+// HR
+hr {
+  color: $border-default;
+  background-color: $border-default;
+  border: 0;
+  height: 1px;
+  margin: 1rem 0;
+}
+
+// Strong/Bold — max weight is 500
+strong, b {
+  font-weight: 500;
+}
+
+// Selection
+::selection {
+  background: rgba($accent-green, 0.25);
+  color: $text-primary;
+}
+
+// Placeholder
+::placeholder {
+  color: $text-muted;
+}
+
+// --- Accessibility: Focus Visible ---
+:focus-visible {
+  outline: 2px solid $accent-green;
+  outline-offset: 2px;
+}
+
+// Remove outline for mouse users
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// --- Accessibility: Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// --- Accessibility: Skip Link (for keyboard users) ---
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+   background: $accent-green-deep;
+   color: $text-white;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  border-radius: 0 0 $border-radius-sm 0;
+  font-weight: 500;
+
+  &:focus {
+    top: 0;
+  }
+}

@@ -1,0 +1,133 @@
+// ============================================================
+// Stygia — CodeMirror SQL Editor
+// ============================================================
+
+$textarea-cols: 40;
+$textarea-rows: 15;
+
+.CodeMirror {
+  height: 20rem;
+  background: $bg-surface;
+  color: $text-primary;
+  font-family: $font-family-monospace;
+  border: 1px solid $border-strong;
+  border-radius: $border-radius-sm;
+}
+
+// CodeMirror default style
+.CodeMirror.cm-s-default {
+  div.CodeMirror-scroll {
+    margin-right: 0;
+    padding-bottom: 0;
+  }
+}
+
+#inline_editor_outer .CodeMirror {
+  height: ceil($textarea-rows * 0.4em);
+}
+
+.insertRowTable .CodeMirror {
+  min-height: ceil($textarea-rows * 0.6em);
+  min-width: ceil($textarea-cols * 0.6em);
+  border: 1px solid $border-strong;
+}
+
+#pma_console .CodeMirror-gutters {
+  background-color: $bg-surface-2;
+  border-right: 1px solid $border-default;
+}
+
+.autocomplete-column-name {
+  display: inline-block;
+}
+
+.autocomplete-column-hint {
+  display: inline-block;
+  float: right;
+  color: $text-muted;
+  margin-left: 1em;
+}
+
+.CodeMirror-hints {
+  z-index: 1999;
+  background: $bg-surface;
+  border: 1px solid $border-default;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-md;
+
+  .CodeMirror-hint {
+    color: $text-primary;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover,
+    &.CodeMirror-hint-active {
+      background: $bg-hover;
+      color: $text-primary;
+    }
+  }
+}
+
+.CodeMirror-lint-tooltip {
+  z-index: 2000;
+  font-family: inherit;
+  background: $bg-surface;
+  border: 1px solid $border-default;
+  border-radius: $border-radius-sm;
+  color: $text-primary;
+
+  code {
+    font-family: monospace;
+    font-weight: 500;
+  }
+}
+
+// SQL syntax highlighting — green-tinted keywords
+.cm-s-default {
+  .cm-keyword { color: $accent-green; font-weight: 500; }
+  .cm-atom { color: $accent-green-light; }
+  .cm-number { color: $accent-green-light; }
+  .cm-def { color: $text-primary; }
+  .cm-variable { color: $text-primary; }
+  .cm-property { color: $text-primary; }
+  .cm-operator { color: $text-secondary; }
+  .cm-comment { color: $text-muted; font-style: italic; }
+  .cm-string { color: $accent-green-light; }
+  .cm-string-2 { color: $accent-green-light; }
+  .cm-builtin { color: $accent-green; }
+  .cm-meta { color: $text-muted; }
+  .cm-bracket { color: $text-secondary; }
+  .cm-tag { color: $color-danger; }
+  .cm-attribute { color: $accent-green; }
+  .cm-qualifier { color: $accent-green; }
+  .cm-error { color: $color-danger; }
+
+  .CodeMirror-cursor {
+    border-left: 2px solid $text-primary;
+  }
+
+  .CodeMirror-selected {
+    background: rgba($accent-green, 0.12) !important;
+  }
+
+  .CodeMirror-focused .CodeMirror-selected {
+    background: rgba($accent-green, 0.18) !important;
+  }
+
+  .CodeMirror-line::selection,
+  .CodeMirror-line > span::selection,
+  .CodeMirror-line > span > span::selection {
+    background: rgba($accent-green, 0.18);
+  }
+
+  .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .CodeMirror-matchingbracket {
+    color: $accent-green !important;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}

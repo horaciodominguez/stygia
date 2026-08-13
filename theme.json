@@ -1,0 +1,8 @@
+{
+    "name": "Stygia",
+    "version": "1.0.0",
+    "description": "A dark, elegant theme for phpMyAdmin inspired by the mythological river Styx. Features enhanced accessibility, RTL support, and a clean, modern UI.",
+    "author": "Personal",
+    "supports": ["6.0"],
+    "colorModes": ["dark"]
+}

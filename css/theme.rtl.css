@@ -1,0 +1,180 @@
+/* Stygia Theme — RTL Overrides */
+/* Generated for phpMyAdmin 6.x compatibility */
+
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navigation sidebar repositioning */
+#pma_navigation {
+  left: auto;
+  right: 0;
+  border-right: 0;
+  border-left: 1px solid #2e2e2e;
+}
+
+#pma_navigation_resizer {
+  left: auto;
+  right: 240px;
+}
+
+#pma_navigation_collapser {
+  left: auto;
+  right: 240px;
+  border-left: 1px solid #2e2e2e;
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Main content offset */
+#page_content {
+  margin-left: 0;
+  margin-right: 0.5em;
+}
+
+/* Float reversals */
+.float-start {
+  float: right !important;
+}
+
+.float-end {
+  float: left !important;
+}
+
+/* Text alignment utilities */
+.text-start {
+  text-align: right !important;
+}
+
+.text-end {
+  text-align: left !important;
+}
+
+/* Form labels */
+fieldset th label {
+  text-align: left;
+  padding-right: 0;
+  padding-left: 0.5em;
+}
+
+/* Breadcrumb direction */
+.breadcrumb-item + .breadcrumb-item::before {
+  float: right;
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+/* Navigation tree indentation */
+#pma_navigation_tree {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+#pma_navigation_tree .list_container {
+  border-left: 0;
+  border-right: 1px solid #2e2e2e;
+  margin-left: 0;
+  margin-right: 0.75em;
+  padding-left: 0;
+  padding-right: 0.75em;
+}
+
+/* Active item indicator */
+#pma_navigation_tree li.activePointer,
+#pma_navigation_tree li.selected {
+  border-left: 0;
+  border-right: 2px solid #3ecf8e;
+  padding-left: 0;
+  padding-right: 2px;
+}
+
+/* Fast filter */
+li.fast_filter {
+  padding-left: 35px;
+  padding-right: 0.75em;
+  margin-left: 0;
+  margin-right: 0.75em;
+  border-left: 0;
+  border-right: 1px solid #2e2e2e;
+}
+
+/* Page selector */
+#pma_navigation div.pageselector {
+  margin-left: 0;
+  margin-right: 0.75em;
+  border-left: 0;
+  border-right: 1px solid #2e2e2e;
+}
+
+/* Console position */
+#pma_console_container {
+  left: 0;
+  right: 240px;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+  text-align: right;
+}
+
+/* Modal close button */
+.btn-close {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Search clause clear */
+.fast_filter .searchClauseClear {
+  right: auto;
+  left: 0;
+}
+
+/* Inline edit */
+.cEdit .goto_link {
+  text-align: left;
+}
+
+/* Table actions */
+.table_actions {
+  text-align: left;
+}
+
+/* SQL query editor */
+#sqlquery {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Code mirror */
+.CodeMirror {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Input fields with ltr content */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Footer positioning */
+#selflink {
+  text-align: left;
+}
+
+/* Pagination */
+.pagination {
+  padding-right: 0;
+}
+
+/* Form-horizontal */
+.form-horizontal .control-label {
+  text-align: left;
+}

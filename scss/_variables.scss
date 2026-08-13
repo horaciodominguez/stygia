@@ -1,0 +1,355 @@
+// ============================================================
+// Stygia Theme — Design Tokens
+// Dark theme with deep green accent palette
+// ============================================================
+
+// --- Accent color palette (Stygia deep green) ---
+$accent-green: #3ecf8e;
+$accent-green-dark: #2db87a;
+$accent-green-light: #52c680;
+$accent-green-deep: #006239;
+$accent-green-deep-hover: #004529;
+
+// Backgrounds — deep dark theme
+$bg-body: #121212;
+$bg-surface: #181818;
+$bg-surface-2: #1c1c1c;
+$bg-surface-3: #1e1e1e;
+$bg-surface-4: #2e2e2e;
+
+// Translucent surfaces (for hover/active states)
+$bg-hover: rgba(255, 255, 255, 0.04);
+$bg-active: rgba(255, 255, 255, 0.06);
+$bg-selected: rgba(62, 207, 142, 0.08);
+
+// Text — deep dark theme palette
+$text-white: #FAFAFA;
+$text-primary: $text-white;
+$text-secondary: #b4b4b4;
+$text-muted: #898989;
+$text-disabled: #4d4d4d;
+
+// Borders — dark theme hierarchy
+$border-default: #2e2e2e;
+$border-strong: #393939;
+$border-stronger: #454545;
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-translucent: rgba(255, 255, 255, 0.08);
+
+// Semantic colors
+$color-success: #3ecf8e;
+$color-danger: #e5484d;
+$color-warning: #f5a623;
+$color-info: #6c5ce7;
+
+// Shadows — close-range, higher opacity for dark mode
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.35);
+$shadow-focus: 0 0 0 2px rgba(62, 207, 142, 0.2);
+
+// phpMyAdmin layout variables
+$navi-width: 240px;
+$navi-color: $text-primary;
+$navi-background: $bg-surface;
+$navi-right-gradient: $bg-surface-2;
+$navi-pointer-color: $text-primary;
+$navi-pointer-background: $bg-hover;
+
+$main-color: $text-primary;
+$browse-pointer-color: $text-primary;
+$browse-pointer-background: rgba($accent-green, 0.06);
+$browse-marker-color: $accent-green;
+$browse-marker-background: rgba($accent-green, 0.12);
+
+$border: 0;
+$th-background: $bg-surface;
+$th-color: $text-secondary;
+$bg-one: $bg-surface;
+$bg-two: $bg-surface-2;
+
+// --- Bootstrap Overrides ---
+
+// Body
+$body-bg: $bg-body;
+$body-color: $text-primary;
+
+// Links
+$link-color: $accent-green;
+$link-decoration: none;
+$link-hover-color: $accent-green-dark;
+$link-hover-decoration: underline;
+
+// Typography
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-monospace: 'Space Mono', 'Source Code Pro', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;
+$font-size-base: 0.875rem;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 500;
+$font-weight-bold: 500;
+
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1rem;
+$h1-font-weight: 400;
+$h2-font-weight: 400;
+$h3-font-weight: 500;
+
+// Border radius — Stygia scale
+$border-radius: 8px;
+$border-radius-sm: 6px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-pill: 9999px;
+
+// Tables
+$table-cell-padding-y: 0.5rem;
+$table-cell-padding-x: 0.75rem;
+$table-cell-padding-y-sm: 0.25rem;
+$table-cell-padding-x-sm: 0.5rem;
+$table-bg: transparent;
+$table-head-bg: $bg-surface;
+$table-head-color: $text-secondary;
+$table-striped-order: even;
+$table-striped-bg: rgba(255, 255, 255, 0.02);
+$table-hover-bg: rgba($accent-green, 0.04);
+$table-border-color: $border-default;
+$table-border-width: 1px;
+$table-caption-color: $text-secondary;
+$table-color: $text-primary;
+
+// Buttons
+$enable-gradients: false;
+$enable-shadows: false;
+$enable-transitions: true;
+
+$primary: $accent-green;
+$secondary: $bg-surface-4;
+$success: $color-success;
+$danger: $color-danger;
+$warning: $color-warning;
+$info: $color-info;
+
+$btn-border-radius: $border-radius-pill;
+$btn-line-height: 1.5;
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+$btn-font-weight: 500;
+
+// Primary button — dark green bg, light text
+$btn-primary-color: $text-white;
+$btn-primary-bg: $accent-green-deep;
+$btn-primary-border-color: $accent-green-deep;
+$btn-primary-hover-color: $text-white;
+$btn-primary-hover-bg: $accent-green-deep-hover;
+$btn-primary-hover-border-color: $accent-green-deep-hover;
+$btn-primary-active-color: $text-white;
+$btn-primary-active-bg: darken($accent-green-deep, 3%);
+$btn-primary-active-border-color: darken($accent-green-deep, 3%);
+
+// Secondary button — transparent, light text, subtle border
+$btn-secondary-color: $text-primary;
+$btn-secondary-bg: transparent;
+$btn-secondary-border-color: $border-strong;
+$btn-secondary-hover-color: $text-primary;
+$btn-secondary-hover-bg: $bg-hover;
+$btn-secondary-hover-border-color: $border-stronger;
+$btn-secondary-active-color: $text-primary;
+$btn-secondary-active-bg: $bg-active;
+$btn-secondary-active-border-color: $border-stronger;
+
+$btn-danger-color: $text-white;
+$btn-danger-bg: $color-danger;
+$btn-danger-border-color: $color-danger;
+
+$btn-link-color: $accent-green;
+$btn-link-hover-color: $accent-green-dark;
+$btn-link-decoration: none;
+$btn-link-hover-decoration: underline;
+
+$btn-disabled-color: $text-disabled;
+$btn-disabled-bg: $bg-surface-2;
+$btn-disabled-border-color: $border-default;
+
+// Dropdowns
+$dropdown-bg: $bg-surface;
+$dropdown-border-color: $border-default;
+$dropdown-color: $text-primary;
+$dropdown-hover-bg: $bg-hover;
+$dropdown-hover-color: $text-primary;
+$dropdown-padding-y: 0.25rem;
+$dropdown-padding-x: 0.5rem;
+$dropdown-item-padding-y: 0.375rem;
+$dropdown-item-padding-x: 0.75rem;
+
+// Forms
+$input-bg: $bg-surface;
+$input-border-color: $border-strong;
+$input-color: $text-primary;
+$input-focus-border-color: $accent-green;
+$input-focus-bg: $bg-surface;
+$input-focus-box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+$input-placeholder-color: $text-muted;
+$input-disabled-bg: $bg-surface-2;
+$input-disabled-color: $text-muted;
+
+$form-check-input-bg: $bg-surface-2;
+$form-check-input-border-color: $border-strong;
+$form-check-input-checked-bg-color: $accent-green;
+$form-check-input-checked-border-color: $accent-green;
+
+$form-select-bg: $bg-surface;
+$form-select-border-color: $border-strong;
+$form-select-color: $text-primary;
+$form-select-focus-border-color: $accent-green;
+
+$form-text-color: $text-secondary;
+
+// Navs (tabs)
+$nav-tabs-border-color: $border-default;
+$nav-tabs-link-hover-bg: $bg-hover;
+$nav-tabs-link-hover-border-color: $border-strong $border-strong $border-default;
+$nav-tabs-link-active-bg: $bg-surface;
+$nav-tabs-link-active-color: $text-primary;
+$nav-tabs-link-active-border-color: $border-strong $border-strong $bg-surface;
+$nav-link-color: $text-secondary;
+$nav-link-hover-color: $text-primary;
+$nav-link-active-color: $accent-green;
+
+// Navbar
+$enable-caret: false;
+$navbar-padding-y: 0;
+$navbar-padding-x: 0;
+$navbar-dark-color: $text-secondary;
+$navbar-dark-hover-color: $text-primary;
+$navbar-dark-active-color: $accent-green;
+$navbar-dark-disabled-color: $text-disabled;
+$navbar-bg: $bg-body;
+$navbar-brand-color: $text-primary;
+
+// Pagination
+$pagination-color: $text-secondary;
+$pagination-bg: $bg-surface;
+$pagination-border-color: $border-default;
+$pagination-hover-color: $text-primary;
+$pagination-hover-bg: $bg-hover;
+$pagination-hover-border-color: $border-strong;
+$pagination-active-color: $text-primary;
+$pagination-active-bg: $accent-green-deep;
+$pagination-active-border-color: $accent-green-deep;
+$pagination-disabled-color: $text-disabled;
+$pagination-disabled-bg: $bg-surface-2;
+$pagination-disabled-border-color: $border-default;
+
+// Card
+$card-bg: $bg-surface;
+$card-border-color: $border-default;
+$card-cap-bg: transparent;
+$card-cap-color: $text-primary;
+$card-color: $text-primary;
+$card-border-radius: $border-radius-lg;
+$card-border-width: 1px;
+$card-img-height: 16vh;
+
+// Accordion
+$accordion-bg: $bg-surface;
+$accordion-border-color: $border-default;
+$accordion-button-color: $text-primary;
+$accordion-button-active-color: $accent-green;
+$accordion-button-active-bg: $bg-surface-2;
+$accordion-button-focus-border-color: $accent-green;
+$accordion-button-focus-box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+$accordion-button-padding-y: 0.75rem;
+$accordion-button-padding-x: 1rem;
+
+// Breadcrumbs
+$breadcrumb-navbar-padding-y: 0.5rem;
+$breadcrumb-navbar-padding-x: 1.8rem;
+$breadcrumb-navbar-margin-bottom: 0;
+$breadcrumb-navbar-bg: $bg-surface;
+$breadcrumb-navbar-bg-dark: $bg-surface;
+$breadcrumb-bg: transparent;
+$breadcrumb-color: $text-secondary;
+$breadcrumb-active-color: $text-primary;
+$breadcrumb-divider-color: $text-muted;
+$breadcrumb-link-color: $text-secondary;
+$breadcrumb-link-hover-color: $accent-green;
+$breadcrumb-divider: quote("\00bb");
+
+// Modals
+$modal-content-bg: $bg-surface;
+$modal-content-border-color: $border-default;
+$modal-content-border-radius: $border-radius-lg;
+$modal-header-bg: $bg-surface;
+$modal-header-border-color: $border-default;
+$modal-header-color: $text-primary;
+$modal-body-color: $text-primary;
+$modal-footer-bg: transparent;
+$modal-backdrop-bg: rgba(0, 0, 0, 0.7);
+$modal-inner-padding: 1rem;
+$modal-footer-margin-between: 0.5rem;
+$modal-header-padding-y: 0.75rem;
+
+// Alert
+$alert-bg: transparent;
+$alert-border-width: 0;
+$alert-border-radius: $border-radius;
+$alert-margin-bottom: 0.75em;
+
+$alert-success-color: $color-success;
+$alert-success-bg: rgba($color-success, 0.08);
+$alert-success-border-color: $color-success;
+
+$alert-danger-color: $color-danger;
+$alert-danger-bg: rgba($color-danger, 0.08);
+$alert-danger-border-color: $color-danger;
+
+$alert-warning-color: $color-warning;
+$alert-warning-bg: rgba($color-warning, 0.08);
+$alert-warning-border-color: $color-warning;
+
+$alert-info-color: $color-info;
+$alert-info-bg: rgba($color-info, 0.08);
+$alert-info-border-color: $color-info;
+
+// List group
+$list-group-bg: transparent;
+$list-group-border-color: $border-default;
+$list-group-color: $text-primary;
+$list-group-hover-bg: $bg-hover;
+$list-group-hover-color: $text-primary;
+$list-group-active-bg: $bg-active;
+$list-group-active-color: $text-primary;
+$list-group-item-padding-x: 0.75rem;
+$list-group-item-padding-y: 0.5rem;
+
+// Toasts
+$toast-background-color: $bg-surface;
+$toast-color: $text-primary;
+$toast-border-color: $border-default;
+
+// Tooltip
+$tooltip-bg: $bg-surface-4;
+$tooltip-color: $text-primary;
+
+// Close
+$btn-close-color: $text-secondary;
+$btn-close-hover-color: $text-primary;
+
+// Forms label
+$label-margin-bottom: 0.25rem;
+$form-label-color: $text-secondary;
+
+// Spinner
+$spinner-color: $accent-green;
+
+// Badge
+$badge-color: $bg-body;
+$badge-bg: $accent-green;
+
+// Helper: text on white surfaces
+$text-white: #FAFAFA;
+
+// Transition
+$transition-base: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

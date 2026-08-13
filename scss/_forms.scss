@@ -1,0 +1,149 @@
+// ============================================================
+// Stygia — Forms
+// ============================================================
+
+.form-control {
+  background-color: $bg-surface;
+  border-color: $border-strong;
+  color: $text-primary;
+  border-radius: $border-radius-sm;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:focus {
+    background-color: $bg-surface;
+    border-color: $accent-green;
+    color: $text-primary;
+    box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $bg-surface-2;
+    color: $text-muted;
+    opacity: 1;
+  }
+}
+
+.form-select {
+  background-color: $bg-surface;
+  border-color: $border-strong;
+  color: $text-primary;
+  border-radius: $border-radius-sm;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+
+  &:focus {
+    border-color: $accent-green;
+    box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+  }
+
+  &:disabled {
+    background-color: $bg-surface-2;
+    color: $text-muted;
+  }
+}
+
+.form-check-input {
+  background-color: $bg-surface-2;
+  border-color: $border-strong;
+
+  &:checked {
+    background-color: $accent-green;
+    border-color: $accent-green;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+  }
+
+  &[type=checkbox]:indeterminate {
+    background-color: $accent-green;
+    border-color: $accent-green;
+  }
+}
+
+.form-check-label {
+  color: $text-primary;
+}
+
+.form-label {
+  color: $text-secondary;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.form-text {
+  color: $text-muted;
+  font-size: 0.8rem;
+}
+
+.form-control-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.form-select-sm {
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+// Input group
+.input-group {
+  .form-control {
+    &:not(:first-child) {
+      border-left: 0;
+    }
+    &:not(:last-child) {
+      border-right: 0;
+    }
+
+    &:focus {
+      border-color: $accent-green;
+      box-shadow: 0 0 0 2px rgba($accent-green, 0.15);
+    }
+  }
+
+  .input-group-text {
+    background-color: $bg-surface-2;
+    border-color: $border-strong;
+    color: $text-muted;
+    transition: border-color 0.15s ease;
+  }
+
+  &:focus-within {
+    .input-group-text {
+      border-color: $accent-green;
+    }
+  }
+}
+
+// Validation
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  border-color: $color-success;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-success, 0.15);
+  }
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  border-color: $color-danger;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-danger, 0.15);
+  }
+}
+
+.valid-feedback {
+  color: $color-success;
+}
+
+.invalid-feedback {
+  color: $color-danger;
+}

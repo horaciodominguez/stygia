@@ -1,0 +1,187 @@
+// ============================================================
+// Stygia — Buttons
+// ============================================================
+
+.btn {
+  transition: all 0.15s ease;
+  font-weight: 500;
+  border-radius: $border-radius-pill;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+
+  &:focus {
+    box-shadow: $shadow-focus;
+  }
+}
+
+.btn-primary {
+  background: $accent-green-deep;
+  border-color: $accent-green-deep;
+  color: $text-white;
+
+  &:hover {
+    background: $accent-green-deep-hover;
+    border-color: $accent-green-deep-hover;
+    color: $text-white;
+  }
+
+  &:active,
+  &.active {
+    background: darken($accent-green-deep, 3%);
+    border-color: darken($accent-green-deep, 3%);
+    color: $text-white;
+  }
+
+  &:disabled,
+  &.disabled {
+    background: $bg-surface-3;
+    border-color: $border-default;
+    color: $text-muted;
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: $border-strong;
+  color: $text-primary;
+
+  &:hover {
+    background: $bg-hover;
+    border-color: $border-stronger;
+    color: $text-primary;
+  }
+
+  &:active,
+  &.active {
+    background: $bg-active;
+    border-color: $border-stronger;
+  }
+
+  &:disabled,
+  &.disabled {
+    background: $bg-surface-2;
+    border-color: $border-default;
+    color: $text-muted;
+  }
+}
+
+.btn-danger {
+  background: $color-danger;
+  border-color: $color-danger;
+  color: $text-white;
+
+  &:hover {
+    background: darken($color-danger, 5%);
+    border-color: darken($color-danger, 5%);
+    color: $text-white;
+  }
+}
+
+.btn-success {
+  background: $accent-green-deep;
+  border-color: $accent-green-deep;
+  color: $text-white;
+
+  &:hover {
+    background: $accent-green-deep-hover;
+    border-color: $accent-green-deep-hover;
+    color: $text-white;
+  }
+}
+
+.btn-warning {
+  background: $color-warning;
+  border-color: $color-warning;
+  color: $bg-body;
+
+  &:hover {
+    background: darken($color-warning, 5%);
+    border-color: darken($color-warning, 5%);
+    color: $bg-body;
+  }
+}
+
+.btn-info {
+  background: $color-info;
+  border-color: $color-info;
+  color: $text-white;
+
+  &:hover {
+    background: darken($color-info, 5%);
+    border-color: darken($color-info, 5%);
+    color: $text-white;
+  }
+}
+
+.btn-outline-primary {
+  color: $accent-green;
+  border-color: $accent-green;
+  background: transparent;
+
+  &:hover {
+    background: rgba($accent-green, 0.1);
+    color: $accent-green;
+    border-color: $accent-green;
+  }
+}
+
+.btn-outline-secondary {
+  color: $text-primary;
+  border-color: $border-strong;
+  background: transparent;
+
+  &:hover {
+    background: $bg-hover;
+    color: $text-primary;
+    border-color: $border-stronger;
+  }
+}
+
+.btn-outline-danger {
+  color: $color-danger;
+  border-color: $color-danger;
+  background: transparent;
+
+  &:hover {
+    background: rgba($color-danger, 0.1);
+    color: $color-danger;
+  }
+}
+
+.btn-link {
+  color: $accent-green;
+  text-decoration: none;
+  border-radius: 0;
+
+  &:hover {
+    color: $accent-green-dark;
+    text-decoration: underline;
+    background: transparent;
+  }
+}
+
+// Non-pill buttons (for specific use cases)
+.btn-pill {
+  border-radius: $border-radius-pill;
+}
+
+.btn-standard {
+  border-radius: $border-radius-sm;
+}
+
+// DataTables buttons — standard radius, not pill
+.dt-button {
+  background: $bg-surface-2 !important;
+  border: 1px solid $border-default !important;
+  color: $text-primary !important;
+  border-radius: $border-radius-sm !important;
+  padding: 0.3rem 0.6rem !important;
+  font-size: 0.8rem !important;
+  transition: all 0.15s ease !important;
+
+  &:hover {
+    background: $bg-hover !important;
+    border-color: $border-strong !important;
+  }
+}

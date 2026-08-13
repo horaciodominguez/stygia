@@ -1,0 +1,225 @@
+// ============================================================
+// Stygia — Navbar
+// ============================================================
+
+#floating_menubar {
+  z-index: 99;
+}
+
+.navbar {
+  background: $bg-body;
+  border-bottom: 1px solid $border-default;
+  padding: 0 1rem;
+  min-height: 38px;
+
+  .navbar-collapse {
+    padding: 0;
+  }
+}
+
+.navbar.bg-light {
+  background: $bg-body;
+  border-bottom: 1px solid $border-default;
+}
+
+.navbar-nav {
+  font-weight: 500;
+  gap: 0;
+
+  .nav-link {
+    color: $text-secondary;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875em;
+    transition: color 0.15s ease, background 0.15s ease;
+
+    &:hover,
+    &:focus {
+      color: $text-primary;
+      background: $bg-hover;
+    }
+  }
+}
+
+.navbar-nav .icon {
+  margin-right: 0.4em;
+  vertical-align: -2px;
+}
+
+.navbar-nav .nav-item {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0;
+
+  .nav-link {
+    color: $text-secondary;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875em;
+    transition: color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      background: $bg-hover;
+      color: $text-primary;
+    }
+  }
+
+  &.active {
+    background: transparent;
+
+    .nav-link {
+      color: $accent-green;
+      border-bottom: 2px solid $accent-green;
+    }
+  }
+}
+
+.navbar-brand {
+  color: $text-primary;
+  &:hover {
+    color: $accent-green;
+  }
+}
+
+.navbar-toggler {
+  border-color: $border-default;
+  color: $text-secondary;
+  padding: 0.2rem 0.4rem;
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(180, 180, 180, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  &:hover {
+    color: $text-primary;
+    background: $bg-hover;
+  }
+}
+
+.nav-link {
+  color: $text-secondary;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+// Breadcrumb navbar
+.breadcrumb-navbar {
+  background: $bg-surface;
+  border-bottom: 1px solid $border-default;
+  padding: 6px 1rem;
+  margin-bottom: 0;
+  border-radius: 0;
+  min-height: 36px;
+
+  .breadcrumb-item {
+    color: $text-secondary;
+    font-size: 0.85em;
+
+    a {
+      color: $text-primary;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $accent-green;
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      color: $text-secondary;
+    }
+
+    + .breadcrumb-item::before {
+      color: $text-muted;
+    }
+  }
+
+  .breadcrumb-comment {
+    color: $text-muted;
+    font-size: 0.85em;
+    font-style: italic;
+  }
+}
+
+// Top menu container
+#topmenucontainer {
+  padding: 0 1em;
+  width: 100%;
+  border-bottom: 1px solid $border-default;
+  background: $bg-body;
+
+  .menucontainer {
+    padding: 0;
+    text-align: left;
+  }
+
+  ul,
+  li {
+    text-align: left;
+  }
+}
+
+// Page nav icons (top-right toolbar)
+#page_nav_icons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: $bg-body;
+  border-bottom: 1px solid $border-default;
+  border-left: 1px solid $border-default;
+
+  .col-12 {
+    padding: 0 2px;
+  }
+
+  .dropdown-toggle {
+    color: $text-secondary;
+    border-color: $border-strong;
+    background: transparent;
+    padding: 2px 6px;
+    font-size: 0.8em;
+
+    &:hover {
+      color: $text-primary;
+      background: $bg-hover;
+    }
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+#page_settings_icon {
+  cursor: pointer;
+  display: none;
+  color: $text-secondary;
+  padding: 4px;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+#lock_page_icon {
+  color: $text-secondary;
+  padding: 4px;
+}
+
+#goto_pagetop {
+  color: $text-secondary;
+  padding: 4px;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
