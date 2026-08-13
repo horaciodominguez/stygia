@@ -21,8 +21,8 @@
 }
 
 .alert-primary {
-  color: $accent-green;
-  background-color: rgba($accent-green, 0.06);
+  color: $accent-green-light;
+  background-color: rgba($accent-green, 0.14);
   border-left-color: $accent-green;
 
   h1 {
@@ -32,7 +32,7 @@
 
 .alert-success {
   color: $color-success;
-  background-color: rgba($color-success, 0.06);
+  background-color: rgba($color-success, 0.14);
   border-left-color: $color-success;
 
   h1 {
@@ -42,7 +42,7 @@
 
 .alert-danger {
   color: $color-danger;
-  background-color: rgba($color-danger, 0.06);
+  background-color: rgba($color-danger, 0.14);
   border-left-color: $color-danger;
 
   h1 {
@@ -52,7 +52,7 @@
 
 .alert-warning {
   color: $color-warning;
-  background-color: rgba($color-warning, 0.06);
+  background-color: rgba($color-warning, 0.16);
   border-left-color: $color-warning;
 
   h1 {
@@ -62,7 +62,7 @@
 
 .alert-info {
   color: $color-info;
-  background-color: rgba($color-info, 0.06);
+  background-color: rgba($color-info, 0.14);
   border-left-color: $color-info;
 
   h1 {

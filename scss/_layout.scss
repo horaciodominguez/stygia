@@ -1,0 +1,106 @@
+// ============================================================
+// Stygia — Page layout, overlay, scrollbar, selflink
+// ============================================================
+
+.hide {
+  display: none;
+}
+
+#page_content {
+  margin: 0 0.5em;
+  padding-bottom: 2.5rem;
+}
+
+div#page_content div {
+  &#tableslistcontainer {
+    margin-top: 1em;
+  }
+
+  &.result_query {
+    margin-top: 1em;
+  }
+}
+
+#tableslistcontainer table.data {
+  border-top: 0;
+}
+
+div.container.modal_form {
+  margin: 0 auto;
+  width: min(30em, calc(100vw - 2rem));
+  text-align: center;
+  background: $bg-surface;
+  border-radius: $border-radius-lg;
+  z-index: 999;
+}
+
+div#modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $modal-backdrop-bg;
+  z-index: 900;
+}
+
+#selflink {
+  clear: both;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: right;
+  border-top: 1px solid $border-default;
+  padding: 6px 0;
+  font-size: 0.8em;
+
+  a {
+    color: $text-muted;
+
+    &:hover {
+      color: $text-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+#pma_errors {
+  clear: both;
+}
+
+// Scrollbars — WebKit + Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $bg-surface-4 $bg-surface;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg-surface-4;
+  border-radius: 4px;
+
+  &:hover {
+    background: $border-stronger;
+  }
+}
+
+div.liveChart,
+.chart-container,
+#serverstatus .chart {
+  background: $bg-surface;
+  border: 1px solid $border-default;
+  border-radius: $border-radius;
+}
+
+.legendColorBox > div {
+  border-color: $border-default !important;
+}

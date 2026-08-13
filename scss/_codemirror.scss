@@ -12,6 +12,37 @@ $textarea-rows: 15;
   font-family: $font-family-monospace;
   border: 1px solid $border-strong;
   border-radius: $border-radius-sm;
+
+  // Gutters (line numbers) — default CM is white; force dark everywhere
+  .CodeMirror-gutters {
+    background-color: $bg-surface-2;
+    border-right: 1px solid $border-default;
+    white-space: nowrap;
+  }
+
+  .CodeMirror-gutter {
+    background-color: $bg-surface-2;
+    color: $text-muted;
+  }
+
+  .CodeMirror-linenumber {
+    color: $text-muted;
+    padding: 0 6px 0 4px;
+  }
+
+  .CodeMirror-gutter-filler,
+  .CodeMirror-scrollbar-filler {
+    background-color: $bg-surface-2;
+  }
+
+  .CodeMirror-scroll {
+    background: $bg-surface;
+  }
+
+  .CodeMirror-sizer,
+  .CodeMirror-lines {
+    background: transparent;
+  }
 }
 
 // CodeMirror default style
@@ -30,11 +61,6 @@ $textarea-rows: 15;
   min-height: ceil($textarea-rows * 0.6em);
   min-width: ceil($textarea-cols * 0.6em);
   border: 1px solid $border-strong;
-}
-
-#pma_console .CodeMirror-gutters {
-  background-color: $bg-surface-2;
-  border-right: 1px solid $border-default;
 }
 
 .autocomplete-column-name {
@@ -83,23 +109,23 @@ $textarea-rows: 15;
   }
 }
 
-// SQL syntax highlighting — green-tinted keywords
+// SQL syntax highlighting — 5 distinct hues
 .cm-s-default {
   .cm-keyword { color: $accent-green; font-weight: 500; }
-  .cm-atom { color: $accent-green-light; }
-  .cm-number { color: $accent-green-light; }
+  .cm-atom { color: $color-number; }
+  .cm-number { color: $color-number; }
   .cm-def { color: $text-primary; }
   .cm-variable { color: $text-primary; }
   .cm-property { color: $text-primary; }
   .cm-operator { color: $text-secondary; }
   .cm-comment { color: $text-muted; font-style: italic; }
-  .cm-string { color: $accent-green-light; }
-  .cm-string-2 { color: $accent-green-light; }
-  .cm-builtin { color: $accent-green; }
+  .cm-string { color: $color-string; }
+  .cm-string-2 { color: $color-string; }
+  .cm-builtin { color: $color-info; }
   .cm-meta { color: $text-muted; }
   .cm-bracket { color: $text-secondary; }
   .cm-tag { color: $color-danger; }
-  .cm-attribute { color: $accent-green; }
+  .cm-attribute { color: $accent-green-light; }
   .cm-qualifier { color: $accent-green; }
   .cm-error { color: $color-danger; }
 

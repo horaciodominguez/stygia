@@ -2,15 +2,6 @@
 // Stygia — Core phpMyAdmin Overrides
 // ============================================================
 
-// --- Page Layout ---
-.hide {
-  display: none;
-}
-
-#page_content {
-  margin: 0 0.5em;
-}
-
 h2 {
   img {
     display: none;
@@ -30,7 +21,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $accent-green-dark;
+    color: $accent-green-light;
     text-decoration: underline;
   }
 }
@@ -40,11 +31,10 @@ button.mult_submit,
   text-decoration: none;
   color: $accent-green;
   cursor: pointer;
-  outline: none;
 
   &:hover {
     text-decoration: underline;
-    color: $accent-green-dark;
+    color: $accent-green-light;
   }
 }
 
@@ -59,11 +49,6 @@ form {
   padding: 0;
   margin: 0;
   display: inline;
-}
-
-input,
-select {
-  outline: none;
 }
 
 input {
@@ -273,27 +258,7 @@ table {
   border-radius: $border-radius-sm;
 }
 
-// --- Login Form ---
-body#loginform {
-  margin: 1em 0 0 0;
-  text-align: center;
 
-  h1,
-  a.logo {
-    display: block;
-    text-align: center;
-  }
-
-  div.container {
-    text-align: left;
-    width: 30em;
-    margin: 0 auto;
-  }
-}
-
-#login_form .card-footer {
-  text-align: right;
-}
 
 // --- Modal Overlay ---
 div.container.modal_form {
@@ -358,26 +323,7 @@ tr:last-child td.condition {
   width: 100%;
 }
 
-#page_settings_icon {
-  cursor: pointer;
-  display: none;
-  color: $text-secondary;
 
-  &:hover {
-    color: $text-primary;
-  }
-}
-
-#lock_page_icon {
-  color: $text-secondary;
-}
-
-#goto_pagetop {
-  color: $text-secondary;
-  &:hover {
-    color: $text-primary;
-  }
-}
 
 #page_settings_modal,
 #pma_navigation_settings {
@@ -605,18 +551,6 @@ div.sqlvalidate {
   border-radius: $border-radius;
 }
 
-#selflink {
-  clear: both;
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  width: 98%;
-  margin-left: 1%;
-  text-align: right;
-  border-top: 1px solid $border-default;
-  padding-top: 0.5em;
-}
-
 kbd {
   color: $text-primary;
   background-color: $bg-surface-2;
@@ -662,20 +596,37 @@ div {
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  padding: 10px 15px;
+  padding: 10px 15px 10px 18px;
   width: 350px;
   z-index: 1100;
   text-align: center;
   display: inline;
   left: 0;
   right: 0;
-  background-image: url("../img/ajax_clock_small.gif");
-  background-repeat: no-repeat;
-  background-position: 10px center;
+  background-image: none;
   border: 1px solid $color-warning;
-  background-color: rgba($color-warning, 0.1);
+  background-color: rgba($color-warning, 0.14);
   color: $color-warning;
   border-radius: $border-radius;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    border: 2px solid rgba($color-warning, 0.28);
+    border-top-color: $color-warning;
+    border-radius: 50%;
+    animation: stygia-spin 0.7s linear infinite;
+    vertical-align: -2px;
+  }
+}
+
+@keyframes stygia-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #loading_parent {
@@ -915,12 +866,12 @@ table#index_columns {
   }
 
   .edit_box_posting {
-    background: $bg-surface url('../img/ajax_clock_small.gif') no-repeat right center;
+    background: $bg-surface url('../img/spinner.svg') no-repeat right center;
     padding-right: 1.5em;
   }
 
   .edit_area_loading {
-    background: $bg-surface url("../img/ajax_clock_small.gif") no-repeat center;
+    background: $bg-surface url("../img/spinner.svg") no-repeat center;
     height: 10em;
     border-radius: $border-radius-sm;
   }
@@ -934,7 +885,7 @@ table#index_columns {
 }
 
 .saving_edited_data {
-  background: url('../img/ajax_clock_small.gif') no-repeat left;
+  background: url('../img/spinner.svg') no-repeat left;
   padding-left: 20px;
 }
 
@@ -1315,37 +1266,7 @@ form.clock {
   text-align: center;
 }
 
-// --- Timepicker ---
-.ui-timepicker-div {
-  .ui-widget-header {
-    margin-bottom: 8px;
-  }
-  dl {
-    text-align: left;
-    dt { height: 25px; margin-bottom: -25px; }
-    dd { margin: 0 10px 10px 85px; }
-  }
-  td { font-size: 90%; }
-}
 
-.ui-tpicker-grid-label {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-body .ui-widget {
-  font-size: 1em;
-}
-
-body #ui-datepicker-div {
-  z-index: 9999 !important;
-}
-
-.ui-draggable {
-  z-index: 801;
-}
 
 // --- Page content ---
 div#page_content div {
@@ -1362,281 +1283,9 @@ div#page_content div {
   border-top: 0;
 }
 
-// --- Console ---
-#pma_console_container {
-  width: calc(100% - #{$navi-width});
-  position: fixed;
-  bottom: 0;
-  left: $navi-width;
-  z-index: 100;
-  pointer-events: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
 
-  &:hover,
-  &.expanded {
-    max-height: 60vh;
-    overflow: visible;
-  }
-}
 
-#page_content {
-  padding-bottom: 10px;
-}
 
-#pma_console {
-  position: relative;
-  margin-left: 0;
-  pointer-events: auto;
-
-  .templates {
-    display: none;
-  }
-
-  .mid_text {
-    vertical-align: middle;
-  }
-
-  // --- Toolbar (collapsed tab) ---
-  .toolbar {
-    position: relative;
-    background: $bg-surface-2;
-    border-top: 1px solid $border-default;
-    cursor: n-resize;
-    pointer-events: auto;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8em;
-    color: $text-secondary;
-    border-radius: $border-radius-sm $border-radius-sm 0 0;
-
-    span {
-      vertical-align: middle;
-    }
-
-    &.collapsed {
-      cursor: pointer;
-      border-top-right-radius: 0;
-      border-right: none;
-
-      &:not(:hover) {
-        display: flex;
-      }
-
-      > .button {
-        display: none;
-      }
-    }
-
-    .button,
-    .text {
-      padding: 0 4px;
-      display: inline-block;
-      color: $text-secondary;
-      cursor: pointer;
-
-      &:hover {
-        color: $text-primary;
-        background: $bg-hover;
-        border-radius: $border-radius-sm;
-      }
-    }
-
-    .text {
-      font-weight: 500;
-      color: $text-primary;
-    }
-
-    .button,
-    .text {
-      margin-right: 0.4em;
-      float: right;
-    }
-  }
-
-  .switch_button {
-    padding: 0 4px;
-    display: inline-block;
-    color: $text-secondary;
-    cursor: pointer;
-
-    &:hover {
-      color: $text-primary;
-    }
-  }
-
-  // --- Message lines ---
-  .message {
-    border-bottom: 1px solid $border-default;
-    padding-bottom: 0.3em;
-    color: $text-primary;
-    position: relative;
-    font-family: $font-family-monospace;
-    cursor: text;
-    margin: 0 10px 0.2em 1.4em;
-
-    span {
-      &.text,
-      &.action {
-        padding: 0 3px;
-        display: inline-block;
-      }
-    }
-
-    span.action {
-      cursor: pointer;
-      color: $text-secondary;
-
-      &:hover {
-        color: $accent-green;
-      }
-    }
-
-    &::before {
-      left: -0.7em;
-      position: absolute;
-      content: ">";
-      color: $text-muted;
-    }
-
-    &:hover::before {
-      color: $accent-green;
-      font-weight: 500;
-    }
-
-    &.failed {
-      &::before,
-      &.expanded::before,
-      &:hover::before {
-        content: "=";
-        color: $color-danger;
-      }
-    }
-  }
-
-  // --- Query input ---
-  .query_input {
-    position: relative;
-    font-family: $font-family-monospace;
-    cursor: text;
-    margin: 0 10px 0.2em 1.4em;
-
-    &::before {
-      left: -0.7em;
-      position: absolute;
-      content: ">";
-      top: -2px;
-      color: $text-muted;
-    }
-
-    textarea {
-      width: 100%;
-      height: 4em;
-      resize: vertical;
-      background: $bg-body;
-      border: 1px solid $border-default;
-      border-radius: $border-radius-sm;
-      color: $text-primary;
-      padding: 6px 8px;
-      font-family: $font-family-monospace;
-      font-size: 0.9em;
-
-      &:focus {
-        border-color: $accent-green;
-        outline: none;
-      }
-    }
-  }
-
-  // --- Console content area ---
-  .content {
-    overflow-x: hidden;
-    overflow-y: auto;
-    border-top: 1px solid $border-default;
-    background: $bg-surface;
-    color: $text-primary;
-    padding: 8px 12px;
-    pointer-events: auto;
-    max-height: 50vh;
-
-    &.console_dark_theme {
-      background: $bg-body;
-      color: $text-primary;
-
-      .CodeMirror-wrap {
-        background: $bg-body;
-        color: $text-primary;
-      }
-    }
-  }
-
-  // --- Debug SQL / Options sections inside console ---
-  .debug, .debug_output {
-    color: $text-secondary;
-    font-size: 0.85em;
-    padding: 6px 0;
-    border-top: 1px solid $border-default;
-    margin-top: 4px;
-
-    h3, .header {
-      color: $text-primary;
-      font-weight: 500;
-      margin-bottom: 4px;
-      font-size: 0.95em;
-    }
-  }
-
-  .options {
-    color: $text-secondary;
-    font-size: 0.85em;
-    padding: 6px 0;
-
-    h3, .header {
-      color: $text-primary;
-      font-weight: 500;
-      margin-bottom: 4px;
-      font-size: 0.95em;
-    }
-  }
-
-  // --- Restore defaults link ---
-  .restore-defaults {
-    color: $text-muted;
-    font-size: 0.8em;
-
-    &:hover {
-      color: $accent-green;
-      text-decoration: none;
-    }
-  }
-}
-
-// --- Selflink footer ---
-#selflink {
-  clear: both;
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0;
-  width: 100%;
-  text-align: right;
-  border-top: 1px solid $border-default;
-  padding: 6px 0;
-  font-size: 0.8em;
-
-  a {
-    color: $text-muted;
-
-    &:hover {
-      color: $text-primary;
-      text-decoration: none;
-    }
-  }
-}
 
 // --- Page errors ---
 #pma_errors {
@@ -1689,36 +1338,9 @@ div#page_content div {
   }
 }
 
-// --- Designer ---
-#designer {
-  background: $bg-body;
-  color: $text-primary;
-}
 
-.designer_table {
-  background: $bg-surface;
-  border: 1px solid $border-default;
-  color: $text-primary;
-}
 
-// --- Scrollbar styling ---
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
 
-::-webkit-scrollbar-track {
-  background: $bg-surface;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $bg-surface-4;
-  border-radius: 4px;
-
-  &:hover {
-    background: $border-stronger;
-  }
-}
 
 // --- Tables data ---
 table.data {
@@ -1816,23 +1438,48 @@ input[type="checkbox"] {
 }
 
 // --- Table link & text colors ---
+// Dense action labels (Browse, Structure…): regular weight + muted color.
+// font-weight 300 looks washed out at ~14px on dark UI and we don't ship Inter Thin.
 .table a,
 td a {
   color: $text-secondary;
+  font-weight: 400;
   text-decoration: none;
+  letter-spacing: 0;
+
+  &:hover {
+    color: $accent-green;
+    text-decoration: none;
+  }
+}
+
+// Name / primary links in tables can stay a touch clearer
+.table td:nth-child(2) a,
+td a[href*="db_structure"],
+td a[href*="sql.php"] {
+  font-weight: 400;
 }
 
 .table td {
-  color: $text-muted;
+  color: $text-primary;
+}
+
+td.null {
+  color: $text-muted !important;
 }
 
 // --- "With selected" bar ---
-.selectall-bar {
-  background: $bg-surface;
+.selectall-bar,
+.with-selected {
+  background: $bg-surface-2;
   border: 1px solid $border-default;
   border-radius: $border-radius;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.85rem;
   margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 // --- Tab content spacing ---

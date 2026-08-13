@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stygia — style preview</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --surface: #1a1a1a;
+      --surface-2: #222;
+      --accent: #3ecf8e;
+      --deep: #006239;
+      --text: #fafafa;
+      --muted: #a3a3a3;
+      --danger: #f07178;
+      --warn: #f5a623;
+      --info: #4ecdc4;
+      --string: #e8c07a;
+      --number: #7ec8e3;
+      --border: #2e2e2e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 14px/1.5 Inter, Segoe UI, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    header img { height: 28px; }
+    h1 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.02em; }
+    main { max-width: 920px; margin: 0 auto; padding: 28px; }
+    h2 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+    .swatch { width: 72px; }
+    .swatch i { display: block; height: 40px; border-radius: 8px; border: 1px solid var(--border); }
+    .swatch span { font-size: 11px; color: var(--muted); }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 24px; }
+    button {
+      background: var(--deep);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-weight: 500;
+    }
+    button.sec {
+      background: transparent;
+      border: 1px solid #3d3d3d;
+      border-radius: 6px;
+      color: var(--text);
+    }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { color: #c4c4c4; font-weight: 500; }
+    a { color: var(--accent); text-decoration: none; }
+    code { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; }
+    .kw { color: var(--accent); } .str { color: var(--string); } .num { color: var(--number); } .cm { color: var(--muted); font-style: italic; }
+    .alert { padding: 10px 14px; border-left: 3px solid var(--danger); background: rgba(240,113,120,0.14); border-radius: 8px; color: var(--danger); }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../img/logo.svg" alt="Stygia">
+    <h1>Style preview</h1>
+  </header>
+  <main>
+    <h2>Palette</h2>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#3ecf8e"></i><span>accent</span></div>
+      <div class="swatch"><i style="background:#006239"></i><span>primary btn</span></div>
+      <div class="swatch"><i style="background:#121212"></i><span>body</span></div>
+      <div class="swatch"><i style="background:#1a1a1a"></i><span>surface</span></div>
+      <div class="swatch"><i style="background:#5dd39e"></i><span>success</span></div>
+      <div class="swatch"><i style="background:#f07178"></i><span>danger</span></div>
+      <div class="swatch"><i style="background:#4ecdc4"></i><span>info</span></div>
+    </div>
+    <h2>Buttons</h2>
+    <div class="row">
+      <button>Go</button>
+      <button class="sec">Cancel</button>
+    </div>
+    <h2>Table</h2>
+    <table>
+      <thead><tr><th>id</th><th>email</th><th>status</th></tr></thead>
+      <tbody>
+        <tr><td><code>1</code></td><td><a href="#">ada@example.com</a></td><td>active</td></tr>
+        <tr><td><code>2</code></td><td><a href="#">lin@example.com</a></td><td>active</td></tr>
+      </tbody>
+    </table>
+    <h2>SQL</h2>
+    <p><code><span class="kw">SELECT</span> id, email <span class="kw">FROM</span> users <span class="kw">WHERE</span> id = <span class="num">42</span>; <span class="cm">-- lookup</span></code></p>
+    <div class="alert">Unknown column 'emial' in 'field list'</div>
+  </main>
+</body>
+</html>

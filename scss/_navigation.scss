@@ -13,6 +13,8 @@
   color: $navi-color;
   z-index: 800;
   border-right: 1px solid $border-default;
+  display: flex;
+  flex-direction: column;
 
   ul {
     margin: 0;
@@ -41,19 +43,28 @@
 
   #pmalogo {
     text-align: left;
-    padding: 10px 10px 6px;
+    padding: 12px 12px 8px;
     border: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
     h1 {
-      font-size: 1.1em;
+      font-size: 1.05em;
       font-weight: 600;
       color: $text-primary;
       margin: 0;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
     img {
       max-height: 28px;
+      width: auto;
+    }
+
+    // Single-line lockup: phpMyAdmin - Stygia
+    a[href] img {
+      content: url("../img/logo_left.svg");
     }
   }
 
@@ -72,7 +83,11 @@
     border-bottom: 1px solid $border-default;
 
     a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      min-height: 24px;
       padding: 4px 5px;
       color: $text-secondary;
       border-radius: $border-radius-sm;
@@ -176,9 +191,17 @@
   left: 0;
   z-index: 0;
 
+  .dropdown-menu {
+    box-shadow: $shadow-md, $shadow-green;
+  }
+
   > img.throbber {
-    display: none;
-    margin: 0.3em auto 0;
+    display: block;
+    margin: 0.5em auto;
+    width: 20px;
+    height: 20px;
+    background: url("../img/spinner.svg") center / contain no-repeat;
+    border: 0;
   }
 }
 
@@ -205,7 +228,7 @@
 
     &:focus {
       border-color: $accent-green;
-      outline: none;
+      box-shadow: $input-focus-box-shadow;
     }
   }
 }
@@ -229,14 +252,16 @@
   margin-left: 5px;
   overflow: hidden;
   color: $text-secondary;
-  height: 74%;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
   position: relative;
 
   a {
     color: $text-secondary;
     padding-left: 0;
     text-decoration: none;
-    transition: color 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease;
 
     &:hover {
       color: $text-primary;
@@ -257,19 +282,56 @@
 
   li {
     margin-bottom: 0;
+    color: $text-secondary;
 
+    // Only the hovered/selected *row* — not every descendant link
     &.activePointer,
     &.selected {
       color: $text-primary;
-      background-color: transparent;
+      background-color: rgba($accent-green, 0.06);
       border-radius: 0;
       border-left: 0;
       padding-left: 0;
+      box-shadow: inset 2px 0 0 $accent-green;
+
+      // Nested tree under a selected DB stays neutral (readable grey)
+      > .list_container,
+      > ul {
+        background: $navi-background;
+        box-shadow: none;
+        color: $text-secondary;
+
+        > li {
+          background: transparent;
+          box-shadow: none;
+        }
+
+        a {
+          color: $text-secondary;
+
+          &:hover {
+            color: $text-primary;
+          }
+        }
+      }
+
+      // Direct label of this row only
+      > a {
+        color: $accent-green;
+      }
     }
 
-    &.activePointer a,
-    &.selected a {
-      color: $accent-green;
+    // Nested selected/hovered rows still get the accent
+    .list_container li.activePointer,
+    .list_container li.selected,
+    ul li.activePointer,
+    ul li.selected {
+      background-color: rgba($accent-green, 0.06);
+      box-shadow: inset 2px 0 0 $accent-green;
+
+      > a {
+        color: $accent-green;
+      }
     }
 
     .dbItemControls {
@@ -299,9 +361,10 @@
     min-height: 16px;
 
     &.fast_filter {
-      white-space: nowrap;
+      white-space: normal;
       clear: both;
-      min-height: 16px;
+      min-height: 28px;
+      overflow: visible;
     }
   }
 
@@ -424,48 +487,83 @@
   }
 }
 
-// Fast filter
+// Fast filter — full width of sidebar, clear button inside the field
 li.fast_filter {
-  padding: 4px 10px;
+  position: relative;
+  padding: 6px 8px;
   margin: 0;
-  padding-right: 35px;
   border-left: 0;
   list-style: none;
+  white-space: normal;
+  overflow: visible;
+  max-width: 100%;
+  box-sizing: border-box;
 
-  input {
-    font-size: 0.7em;
+  input,
+  input[type="text"] {
+    font-size: 0.75rem;
+    min-height: 28px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0.35rem 1.75rem 0.35rem 0.5rem;
+    box-sizing: border-box;
   }
 
   .searchClauseClear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     border: 0;
+    background: transparent;
     font-weight: bold;
     color: $color-danger;
-    font-size: 0.7em;
+    font-size: 1rem;
+    line-height: 1;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2;
   }
 
   .searchClauseClear:hover {
     background-color: transparent;
     border-color: transparent;
+    color: lighten($color-danger, 8%);
   }
 
   &.db_fast_filter {
     border: 0;
     margin-left: 0;
-    padding: 4px 10px;
+    padding: 6px 8px;
   }
 }
 
 #navigation_controls_outer {
-  min-height: 21px !important;
+  min-height: 28px !important;
+  padding: 2px 8px;
+  clear: both;
 
   &.activePointer {
     background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
 #navigation_controls {
-  float: right;
-  padding-right: 23px;
+  float: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  flex-wrap: wrap;
+
+  select,
+  .pageselector {
+    margin: 0;
+  }
 }
 
 // Resize handler

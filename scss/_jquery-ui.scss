@@ -1,0 +1,178 @@
+// ============================================================
+// Stygia — jQuery UI (datepicker, dialog, slider, autocomplete)
+// ============================================================
+
+body .ui-widget {
+  font-family: $font-family-base;
+  font-size: 1em;
+  color: $text-primary;
+}
+
+body .ui-widget-content {
+  background: $bg-popover;
+  color: $text-primary;
+  border: 1px solid $border-default;
+}
+
+body .ui-widget-header {
+  background: $bg-surface-2;
+  color: $text-primary;
+  border: 0;
+  border-bottom: 1px solid $border-default;
+  font-weight: 600;
+}
+
+body .ui-state-default,
+body .ui-widget-content .ui-state-default {
+  background: $bg-surface;
+  border: 1px solid $border-strong;
+  color: $text-secondary;
+}
+
+body .ui-state-hover,
+body .ui-widget-content .ui-state-hover,
+body .ui-state-focus {
+  background: $bg-hover;
+  border-color: $accent-green;
+  color: $text-primary;
+}
+
+body .ui-state-active,
+body .ui-state-highlight {
+  background: rgba($accent-green, 0.16);
+  border-color: $accent-green;
+  color: $accent-green;
+}
+
+body .ui-icon {
+  filter: invert(0.85);
+}
+
+body #ui-datepicker-div {
+  z-index: 9999 !important;
+  background: $bg-popover;
+  border: 1px solid $border-default;
+  border-radius: $border-radius;
+  box-shadow: $shadow-md, $shadow-green;
+  padding: 0.5rem;
+}
+
+.ui-datepicker {
+  .ui-datepicker-title {
+    color: $text-primary;
+  }
+
+  .ui-datepicker-calendar {
+    th {
+      color: $text-muted;
+      font-weight: 500;
+    }
+
+    td a {
+      text-align: center;
+      border-radius: $border-radius-sm;
+    }
+
+    .ui-datepicker-today a {
+      border-color: $accent-green;
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    cursor: pointer;
+    color: $text-secondary;
+
+    &:hover {
+      background: $bg-hover;
+      border-radius: $border-radius-sm;
+    }
+  }
+}
+
+.ui-timepicker-div {
+  .ui-widget-header {
+    margin-bottom: 8px;
+  }
+
+  dl {
+    text-align: left;
+
+    dt {
+      height: 25px;
+      margin-bottom: -25px;
+    }
+
+    dd {
+      margin: 0 10px 10px 85px;
+    }
+  }
+
+  td {
+    font-size: 90%;
+  }
+}
+
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ui-draggable {
+  z-index: 801;
+}
+
+.ui-dialog {
+  background: $bg-surface;
+  border: 1px solid $border-default;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  color: $text-primary;
+
+  .ui-dialog-titlebar {
+    background: $bg-surface-2;
+    border-bottom: 1px solid $border-default;
+    color: $text-primary;
+  }
+
+  .ui-dialog-buttonpane {
+    background: $bg-surface;
+    border-top: 1px solid $border-default;
+  }
+}
+
+.ui-slider {
+  background: $bg-surface-3;
+  border: 0;
+  border-radius: $border-radius-pill;
+
+  .ui-slider-range {
+    background: $accent-green-deep;
+  }
+
+  .ui-slider-handle {
+    background: $accent-green;
+    border: 0;
+    border-radius: 50%;
+  }
+}
+
+.ui-autocomplete {
+  background: $bg-popover;
+  border: 1px solid $border-default;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-md;
+  color: $text-primary;
+
+  .ui-menu-item-wrapper {
+    color: $text-primary;
+
+    &.ui-state-active {
+      background: $bg-hover;
+      border: 0;
+      color: $accent-green;
+    }
+  }
+}

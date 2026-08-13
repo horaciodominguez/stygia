@@ -2,37 +2,45 @@
 // Stygia — Reboot / Base Element Overrides
 // ============================================================
 
-// Body
+:root {
+  color-scheme: dark;
+}
+
 body {
   text-align: left;
   background: $bg-body;
   color: $text-primary;
+  color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Typography — Weight 400 for headings, 500 for interactive elements
 h1 {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
+  color: $text-primary;
+  margin: 0.5rem 0 0.75rem;
 }
 
 h2 {
-  font-weight: 400;
-  color: $text-secondary;
-  padding: 10px 0 10px 3px;
-  font-size: 1.25rem;
+  font-weight: 500;
+  color: $text-primary;
+  padding: 0.35rem 0;
+  font-size: $h2-font-size;
+  letter-spacing: -0.015em;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-h4, h5, h6 {
-  font-weight: 500;
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }
 
-// Forms
 input,
 select {
   font-size: 1em;
@@ -40,29 +48,26 @@ select {
 
 textarea {
   font-family: $font-family-monospace;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
-// Links
 a {
   color: $accent-green;
   transition: color 0.15s ease;
 
   &:hover {
-    color: $accent-green-dark;
+    color: $accent-green-light;
   }
 }
 
-// Code — green tinted
 code {
-  color: $accent-green;
-  background: rgba($accent-green, 0.08);
+  color: $accent-green-light;
+  background: rgba($accent-green, 0.1);
   padding: 0.15em 0.3em;
   border-radius: 4px;
   font-size: 0.875em;
 }
 
-// HR
 hr {
   color: $border-default;
   background-color: $border-default;
@@ -71,34 +76,29 @@ hr {
   margin: 1rem 0;
 }
 
-// Strong/Bold — max weight is 500
-strong, b {
-  font-weight: 500;
+strong,
+b {
+  font-weight: 600;
 }
 
-// Selection
 ::selection {
   background: rgba($accent-green, 0.25);
   color: $text-primary;
 }
 
-// Placeholder
 ::placeholder {
   color: $text-muted;
 }
 
-// --- Accessibility: Focus Visible ---
 :focus-visible {
   outline: 2px solid $accent-green;
   outline-offset: 2px;
 }
 
-// Remove outline for mouse users
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-// --- Accessibility: Reduced Motion ---
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -108,15 +108,52 @@ strong, b {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  #pma_console_container {
+    transition: none !important;
+
+    &.expanded {
+      max-height: 60vh;
+    }
+  }
 }
 
-// --- Accessibility: Skip Link (for keyboard users) ---
+@media (prefers-contrast: more) {
+  :focus-visible {
+    outline-width: 3px;
+  }
+
+  .table,
+  .table th,
+  .table td {
+    border-color: $border-stronger;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+
+  .icon {
+    forced-color-adjust: auto;
+  }
+}
+
+.dropdown-menu {
+  box-shadow: $shadow-md, $shadow-green;
+}
+
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-   background: $accent-green-deep;
-   color: $text-white;
+  background: $accent-green-deep;
+  color: $text-white;
   padding: 8px 16px;
   z-index: 10000;
   text-decoration: none;

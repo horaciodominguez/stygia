@@ -1,0 +1,78 @@
+// ============================================================
+// Stygia — Login
+// ============================================================
+
+body#loginform {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba($accent-green, 0.08), transparent 55%),
+    $bg-body;
+
+  h1,
+  a.logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  a.logo img,
+  #pmalogo img {
+    max-height: 40px;
+    width: auto;
+    // Login: single-line phpMyAdmin - Stygia
+    content: url("../img/logo-login.svg");
+  }
+
+  div.container {
+    text-align: left;
+    width: min(30em, calc(100vw - 2rem));
+    margin: 0 auto;
+  }
+
+  .card {
+    background: $bg-surface;
+    border: 1px solid $border-default;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-lg, $shadow-green;
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: $bg-surface-2;
+    border-bottom: 1px solid $border-default;
+    text-align: center;
+    font-weight: $font-weight-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  .card-body {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .card-footer {
+    background: $bg-surface;
+    border-top: 1px solid $border-default;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .btn-primary {
+    border-radius: $border-radius-pill;
+    padding: 0.5rem 1.4rem;
+  }
+}
+
+#login_form .card-footer {
+  text-align: right;
+}
