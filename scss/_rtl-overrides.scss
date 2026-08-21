@@ -97,3 +97,54 @@ textarea.codemirror-textarea {
 .ic_select_all_arrow[dir="rtl"] {
   transform: scaleX(-1);
 }
+
+// Date/time picker — grid + chrome that rtlcss cannot infer
+.ui-timepicker-div dl {
+  text-align: right;
+}
+
+.ui-datepicker {
+  .ui-datepicker-prev {
+    left: auto;
+    right: 0;
+
+    &,
+    &.ui-state-hover,
+    &.ui-datepicker-prev-hover {
+      left: auto;
+      right: 0;
+    }
+
+    span.ui-icon {
+      -webkit-mask-image: url("../img/chevron-right.svg");
+      mask-image: url("../img/chevron-right.svg");
+    }
+  }
+
+  .ui-datepicker-next {
+    right: auto;
+    left: 0;
+
+    &,
+    &.ui-state-hover,
+    &.ui-datepicker-next-hover {
+      right: auto;
+      left: 0;
+    }
+
+    span.ui-icon {
+      -webkit-mask-image: url("../img/chevron-left.svg");
+      mask-image: url("../img/chevron-left.svg");
+    }
+  }
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  right: auto;
+  left: 0.65rem;
+}
+
+img.ui-datepicker-trigger {
+  margin-inline-start: 0;
+  margin-inline-end: 0.35rem;
+}

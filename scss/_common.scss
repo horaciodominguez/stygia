@@ -855,6 +855,7 @@ table#index_columns {
   margin: 0;
   padding: 0;
   position: absolute;
+  overflow: visible;
 
   input[type=text] {
     background: $bg-surface;
@@ -870,6 +871,7 @@ table#index_columns {
     min-width: 10em;
     padding: 0.3em 0.5em;
     border-radius: $border-radius-sm;
+    overflow: visible;
 
     select,
     textarea {
@@ -1321,51 +1323,7 @@ div#page_content div {
   clear: both;
 }
 
-// --- Enum Editor ---
-.enum_editor {
-  .enum_type_header {
-    background: $bg-surface-2;
-    padding: 0.5em;
-    border-radius: $border-radius-sm $border-radius-sm 0 0;
-    border: 1px solid $border-default;
-    border-bottom: 0;
-  }
-
-  .enum_editor_content {
-    background: $bg-surface;
-    padding: 0.5em;
-    border: 1px solid $border-default;
-    border-radius: 0 0 $border-radius-sm $border-radius-sm;
-  }
-
-  .enum_values {
-    background: $bg-surface-2;
-    border: 1px solid $border-default;
-    border-radius: $border-radius-sm;
-    padding: 0.5em;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-
-  .enum_value {
-    padding: 0.3em 0.5em;
-    margin: 2px 0;
-    border-radius: $border-radius-sm;
-    cursor: default;
-
-    &:hover {
-      background: $bg-hover;
-    }
-
-    .btn {
-      margin-left: 0.5em;
-    }
-  }
-
-  .add_value {
-    margin-top: 0.5em;
-  }
-}
+// ENUM/SET editor styles live in _modals.scss (#enum_editor)
 
 
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.1.1 — 2026-08-21
+
+Modal and field-editor polish: datepicker/timepicker, jQuery UI dialogs, Bootstrap overlays.
+
+### Editors and overlays
+
+- Fix calendar trigger: ship `img/b_calendar.png` (host JS path) and paint via SVG mask
+- Modernize `#ui-datepicker-div`: circular day selection, Inter chrome, roomier padding
+- Rebuild `.ui-timepicker-div` as CSS grid (no float label hack); compact time input + green sliders
+- Theme `.ui-widget-overlay`, dialog close via `close.svg`, stronger buttonpane layout
+- New `scss/_modals.scss`: Bootstrap modal shell, `#enum_editor`, GIS editor, inline `.cEdit` overflow
+- RTL overrides for picker chevrons, time grid, dialog close, calendar trigger
+
 ## 2.1.0 — 2026-08-21
 
 Usability and design polish: 20 targeted improvements plus a visual QA pass (login, tabs, typed cells, chrome).
