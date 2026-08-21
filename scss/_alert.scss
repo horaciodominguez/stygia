@@ -10,6 +10,9 @@
   border-radius: $alert-border-radius;
   padding: 10px 10px 10px 14px;
   background-position: 10px 50%;
+  max-width: 100%;
+  box-sizing: border-box;
+  line-height: 1.45;
 
   a {
     text-decoration: underline;
@@ -81,4 +84,12 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.toast {
+  max-width: min(350px, calc(100vw - 2rem));
+  background: $bg-popover;
+  border: 1px solid $border-default;
+  color: $text-primary;
+  box-shadow: $shadow-md;
 }

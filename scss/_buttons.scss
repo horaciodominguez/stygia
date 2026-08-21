@@ -5,11 +5,24 @@
 
 .btn {
   transition: all 0.15s ease;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: $border-radius-sm;
   padding: $btn-padding-y $btn-padding-x;
   font-size: 0.875rem;
   letter-spacing: 0;
+  line-height: 1.4;
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+
+  .icon {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    background-color: currentColor;
+  }
 
   &:focus-visible {
     box-shadow: $shadow-focus;
@@ -159,6 +172,7 @@ input[type=submit].go-btn {
   color: $accent-green;
   text-decoration: none;
   border-radius: 0;
+  min-height: auto;
 
   &:hover {
     color: $accent-green-light;
@@ -170,7 +184,9 @@ input[type=submit].go-btn {
 .btn-sm,
 .btn-group-sm > .btn {
   border-radius: $border-radius-sm;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.55rem;
+  min-height: 1.85rem;
+  font-size: 0.8125rem;
 }
 
 .btn-pill {
@@ -186,23 +202,60 @@ input[type=submit].go-btn {
   border-radius: $border-radius-sm;
 }
 
+// Toolbar rhythm
+.btn-group,
+.btn-toolbar,
+.toolbar,
+#table_results_form .btn-group,
+.navigation .btn-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-group > .btn,
+.btn-group > .btn-group {
+  margin: 0;
+}
+
+.btn-group-sm {
+  gap: 0.25rem;
+}
+
+// Icon-only buttons — compact chrome, not oversized hit slabs
+.btn:has(> .icon:only-child),
+.btn.btn-icon {
+  min-width: 1.85rem;
+  min-height: 1.85rem;
+  padding: 0.3rem;
+}
+
 .dt-button {
   background: $bg-surface-2 !important;
   border: 1px solid $border-default !important;
   color: $text-primary !important;
   border-radius: $border-radius-sm !important;
-  padding: 0.3rem 0.6rem !important;
+  padding: 0.35rem 0.65rem !important;
   font-size: 0.8rem !important;
+  min-height: 1.85rem !important;
   transition: all 0.15s ease !important;
 
   &:hover {
     background: $bg-hover !important;
     border-color: $border-strong !important;
   }
+
+  &:disabled,
+  &.disabled {
+    color: $text-disabled !important;
+    opacity: 1 !important;
+  }
 }
 
 .navigation {
   input[type=submit] {
     border-radius: $border-radius-sm;
+    min-height: 1.85rem;
   }
 }

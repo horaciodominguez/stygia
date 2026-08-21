@@ -260,25 +260,7 @@ table {
 
 
 
-// --- Modal Overlay ---
-div.container.modal_form {
-  margin: 0 auto;
-  width: 30em;
-  text-align: center;
-  background: $bg-surface;
-  border-radius: $border-radius-lg;
-  z-index: 999;
-}
-
-div#modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 900;
-}
+// --- Modal Overlay: see _layout.scss (canonical) ---
 
 // --- Condition markers ---
 .condition {
@@ -382,32 +364,36 @@ tr:last-child td.condition {
 #fieldset_add_user_login {
   div.item {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 0.5rem 0.75rem;
     border-bottom: 1px solid $border-default;
-    padding-bottom: 0.3em;
-    margin-bottom: 0.3em;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   label {
-    float: left;
     display: block;
-    width: 10em;
+    flex: 0 0 10em;
     max-width: 100%;
     text-align: right;
     padding-right: 0.5em;
     margin-bottom: 0;
+    color: $text-secondary;
   }
 
   input {
     width: 12em;
-    clear: right;
     max-width: 100%;
+    flex: 1 1 12em;
   }
 
   span.options {
-    float: left;
-    display: block;
-    width: 12em;
+    display: flex;
+    flex: 1 1 12em;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
     max-width: 100%;
     padding-right: 0.5em;
 
@@ -420,17 +406,44 @@ tr:last-child td.condition {
 
     input {
       width: auto;
+      flex: 0 0 auto;
     }
   }
 }
 
-#fieldset_user_priv div.item {
-  float: left;
-  width: 9em;
-  max-width: 100%;
-  div.item { float: none; }
-  label { white-space: nowrap; }
-  select { width: 100%; }
+#fieldset_user_priv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+
+  div.item {
+    flex: 0 1 9em;
+    max-width: 100%;
+    min-width: 7em;
+
+    div.item {
+      display: block;
+      flex: none;
+    }
+
+    label {
+      white-space: nowrap;
+    }
+
+    select {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #fieldset_add_user_login {
+    label {
+      flex-basis: 100%;
+      text-align: left;
+      padding-right: 0;
+    }
+  }
 }
 
 // --- Server Status ---
@@ -443,7 +456,9 @@ div {
 
   &.liveChart {
     clear: both;
-    min-width: 500px;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
     height: 400px;
     padding-bottom: 80px;
   }
@@ -563,14 +578,15 @@ kbd {
 // --- Upload Progress ---
 div {
   &.upload_progress {
-    width: 400px;
+    width: min(400px, calc(100vw - 2rem));
+    max-width: 100%;
     margin: 3em auto;
     text-align: center;
   }
 
   &.upload_progress_bar_outer {
     border: 1px solid $border-default;
-    width: 202px;
+    width: min(202px, 100%);
     position: relative;
     margin: 0 auto 1em;
     color: $text-primary;
@@ -592,12 +608,14 @@ div {
 .ajax_notification {
   top: 0;
   position: fixed;
-  margin-top: 200px;
+  margin-top: min(200px, 20vh);
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
   padding: 10px 15px 10px 18px;
-  width: 350px;
+  width: min(350px, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
   z-index: 1100;
   text-align: center;
   display: inline;
@@ -784,20 +802,28 @@ fieldset {
       margin: 0;
       box-sizing: border-box;
     }
-    div { padding: 0.2em 0; }
+    div {
+      padding: 0.2em 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
     .label {
-      float: left;
-      min-width: 12em;
+      flex: 0 0 12em;
+      min-width: 8em;
     }
   }
   .slider {
     width: 10em;
     margin: 0.6em;
-    float: left;
   }
   .add_fields {
-    float: left;
-    input { margin-left: 1em; }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    input { margin-left: 0; }
   }
   input { margin: 0; }
   td { vertical-align: middle; }
@@ -807,7 +833,6 @@ table#index_columns {
   width: 100%;
   select {
     width: 85%;
-    float: left;
   }
 }
 
@@ -1158,12 +1183,16 @@ table#index_columns {
 }
 
 // --- Table Stats ---
-div#tablestatistics table {
-  float: left;
-  margin-bottom: 0.5em;
-  margin-right: 1.5em;
-  margin-top: 0.5em;
-  min-width: 16em;
+div#tablestatistics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+
+  table {
+    float: none;
+    margin: 0.5em 0;
+    min-width: 16em;
+  }
 }
 
 // --- Structure Action Links ---
@@ -1359,33 +1388,30 @@ table.data {
   clear: both;
 }
 
-// --- Improved Go Button ---
-input[type=submit].btn,
-button.btn,
-input[type=submit].btn-secondary,
-input[type=submit].btn-primary {
+// --- Improved Go Button (primary only — not every .btn) ---
+input[type=submit].btn-primary,
+.go-btn,
+button.btn-primary {
   border-radius: $border-radius-pill;
   font-weight: 500;
   padding: 0.4rem 1.2rem;
   font-size: 0.875rem;
   transition: all 0.15s ease;
-}
-
-input[type=submit].btn-primary,
-.go-btn {
   background: $accent-green-deep;
-   border: 1px solid $accent-green-deep;
-   color: $text-white;
-  border-radius: $border-radius-pill;
-  padding: 0.4rem 1.2rem;
-  font-weight: 500;
+  border: 1px solid $accent-green-deep;
+  color: $text-white;
   cursor: pointer;
-  transition: all 0.15s ease;
 
   &:hover {
     background: $accent-green-deep-hover;
     border-color: $accent-green-deep-hover;
   }
+}
+
+input[type=submit].btn-secondary,
+button.btn-secondary {
+  border-radius: $border-radius-sm;
+  font-weight: 400;
 }
 
 // --- Action links in tables ---
@@ -1518,6 +1544,7 @@ td.null {
 }
 
 // --- Improve table row actions ---
+// Round Edit/Copy/Delete chips live in `_tables.scss`.
 .pointer[id*="anchor"] {
   color: $text-secondary;
 }

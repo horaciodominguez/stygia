@@ -1,6 +1,8 @@
 # Build artifacts
 *.zip
 *.tar.gz
+css/.rtl-overrides.tmp.css
+css/.rtl-overrides.tmp.css.map
 
 # Dependencies
 node_modules/
@@ -14,3 +16,4 @@ desktop.ini
 *.log
 .idea/
 .vscode/
+.cursor/

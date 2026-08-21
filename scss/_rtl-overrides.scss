@@ -26,7 +26,13 @@ textarea.codemirror-textarea {
 
 #pma_console_container {
   left: 0;
-  right: $navi-width;
+  right: auto;
+  width: 100%;
+}
+
+#pma_console {
+  margin-left: 0;
+  margin-right: $navi-width;
 }
 
 // Tree block connectors use absolute left; nudge for RTL

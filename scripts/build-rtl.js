@@ -53,6 +53,8 @@ const overrides = fs.existsSync(overridesTmp)
   : "";
 
 if (fs.existsSync(overridesTmp)) fs.unlinkSync(overridesTmp);
+const overridesTmpMap = overridesTmp + ".map";
+if (fs.existsSync(overridesTmpMap)) fs.unlinkSync(overridesTmpMap);
 
 const banner =
   "/* Stygia RTL — generated via rtlcss(theme.css) + _rtl-overrides.scss */\n";

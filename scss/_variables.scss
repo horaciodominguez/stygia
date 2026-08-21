@@ -23,12 +23,12 @@ $bg-hover: rgba(255, 255, 255, 0.05);
 $bg-active: rgba(255, 255, 255, 0.08);
 $bg-selected: rgba(62, 207, 142, 0.10);
 
-// Text — WCAG AA on #121212 / #1a1a1a
+// Text — WCAG AA on #121212 / #1a1a1a (bumped for scannability)
 $text-white: #fafafa;
 $text-primary: $text-white;
-$text-secondary: #c4c4c4;
-$text-muted: #a3a3a3;
-$text-disabled: #8a8a8a;
+$text-secondary: #c8c8c8;
+$text-muted: #b0b0b0;
+$text-disabled: #949494;
 
 // Borders — dark theme hierarchy
 $border-default: #2e2e2e;
@@ -37,13 +37,34 @@ $border-stronger: #4a4a4a;
 $border-subtle: rgba(255, 255, 255, 0.06);
 $border-translucent: rgba(255, 255, 255, 0.08);
 
-// Semantic colors — distinct from primary accent
+// Semantic UI colors — distinct from primary accent
 $color-success: #5dd39e;
 $color-danger: #f07178;
 $color-warning: #f5a623;
 $color-info: #4ecdc4;
-$color-string: #e8c07a;
-$color-number: #7ec8e3;
+
+// One Dark Pro (zhuangtongfa / Binaryify) — classic token palette
+// https://github.com/Binaryify/OneDark-Pro
+$odp-chalky: #e5c07b;
+$odp-coral: #e06c75;
+$odp-dark: #5c6370;
+$odp-fountain-blue: #56b6c2;
+$odp-green: #98c379;
+$odp-malibu: #61afef;
+$odp-purple: #c678dd;
+$odp-whiskey: #d19a66;
+$odp-light-white: #abb2bf;
+$odp-light-dark: #7f848e;
+
+// Code / cell values (aligned with One Dark Pro)
+$color-string: $odp-green;
+$color-number: $odp-whiskey;
+$color-type: $odp-chalky;
+$color-keyword: $odp-purple;
+$color-function: $odp-malibu;
+$color-operator: $odp-fountain-blue;
+$color-comment: $odp-light-dark;
+$color-null: $odp-dark;
 
 // Shadows — close-range, higher opacity for dark mode
 $shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -62,9 +83,9 @@ $navi-pointer-background: $bg-hover;
 
 $main-color: $text-primary;
 $browse-pointer-color: $text-primary;
-$browse-pointer-background: rgba($accent-green, 0.06);
+$browse-pointer-background: rgba($accent-green, 0.08);
 $browse-marker-color: $accent-green;
-$browse-marker-background: rgba($accent-green, 0.12);
+$browse-marker-background: rgba($accent-green, 0.14);
 
 $border: 0;
 $th-background: $bg-surface;
@@ -82,20 +103,25 @@ $link-decoration: none;
 $link-hover-color: $accent-green-light;
 $link-hover-decoration: underline;
 
-$font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$font-family-monospace: "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+// UI: local FiraCode Nerd Font trial (system font). Propo for UI, Mono for SQL.
+// Falls back to Inter / JetBrains if FiraCode NF is not installed.
+$font-family-base: "FiraCode Nerd Font Propo", "FiraCode Nerd Font", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace: "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
 $font-size-base: 0.875rem;
+$font-weight-lighter: 300;
+$font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
-$font-weight-semibold: 600;
+$font-weight-semibold: 500;
 $font-weight-bold: 600;
+$line-height-base: 1.5;
 
 $h1-font-size: 1.375rem;
 $h2-font-size: 1.125rem;
 $h3-font-size: 1rem;
 $h1-font-weight: 500;
 $h2-font-weight: 500;
-$h3-font-weight: 600;
+$h3-font-weight: 500;
 
 $border-radius: 8px;
 $border-radius-sm: 6px;
@@ -103,16 +129,16 @@ $border-radius-lg: 12px;
 $border-radius-xl: 16px;
 $border-radius-pill: 9999px;
 
-$table-cell-padding-y: 0.5rem;
+$table-cell-padding-y: 0.55rem;
 $table-cell-padding-x: 0.75rem;
-$table-cell-padding-y-sm: 0.25rem;
+$table-cell-padding-y-sm: 0.3rem;
 $table-cell-padding-x-sm: 0.5rem;
 $table-bg: transparent;
 $table-head-bg: $bg-surface;
 $table-head-color: $text-secondary;
 $table-striped-order: even;
-$table-striped-bg: rgba(255, 255, 255, 0.02);
-$table-hover-bg: rgba($accent-green, 0.05);
+$table-striped-bg: rgba(255, 255, 255, 0.045);
+$table-hover-bg: rgba($accent-green, 0.07);
 $table-border-color: $border-default;
 $table-border-width: 1px;
 $table-caption-color: $text-secondary;
@@ -222,6 +248,7 @@ $input-focus-box-shadow: 0 0 0 2px rgba($accent-green, 0.18);
 $input-placeholder-color: $text-muted;
 $input-disabled-bg: $bg-surface-2;
 $input-disabled-color: $text-disabled;
+$input-disabled-border-color: $border-default;
 
 $form-check-input-bg: $bg-surface-2;
 $form-check-input-border-color: $border-strong;
@@ -236,14 +263,20 @@ $form-select-focus-border-color: $accent-green;
 $form-text-color: $text-secondary;
 
 $nav-tabs-border-color: $border-default;
-$nav-tabs-link-hover-bg: $bg-hover;
-$nav-tabs-link-hover-border-color: $border-strong $border-strong $border-default;
-$nav-tabs-link-active-bg: $bg-surface;
-$nav-tabs-link-active-color: $text-primary;
-$nav-tabs-link-active-border-color: $border-strong $border-strong $bg-surface;
+$nav-tabs-link-hover-bg: transparent;
+$nav-tabs-link-hover-border-color: transparent transparent $border-strong;
+$nav-tabs-link-active-bg: transparent;
+$nav-tabs-link-active-color: $accent-green;
+$nav-tabs-link-active-border-color: transparent transparent $accent-green;
 $nav-link-color: $text-secondary;
 $nav-link-hover-color: $text-primary;
 $nav-link-active-color: $accent-green;
+$nav-link-font-weight: 400;
+
+// Pills used as top menu — restyle as underline tabs (not green CTA pills)
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-color: $accent-green;
+$nav-pills-link-active-bg: transparent;
 
 $enable-caret: false;
 $navbar-padding-y: 0;

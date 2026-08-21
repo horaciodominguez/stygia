@@ -10,14 +10,18 @@ $textarea-rows: 15;
   background: $bg-surface;
   color: $text-primary;
   font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+  line-height: 1.55;
   border: 1px solid $border-strong;
   border-radius: $border-radius-sm;
+  padding: 0;
 
-  // Gutters (line numbers) — default CM is white; force dark everywhere
+  // Gutters (line numbers)
   .CodeMirror-gutters {
     background-color: $bg-surface-2;
     border-right: 1px solid $border-default;
     white-space: nowrap;
+    padding-right: 2px;
   }
 
   .CodeMirror-gutter {
@@ -26,8 +30,9 @@ $textarea-rows: 15;
   }
 
   .CodeMirror-linenumber {
-    color: $text-muted;
-    padding: 0 6px 0 4px;
+    color: $text-disabled;
+    padding: 0 8px 0 6px;
+    min-width: 2.25em;
   }
 
   .CodeMirror-gutter-filler,
@@ -42,6 +47,11 @@ $textarea-rows: 15;
   .CodeMirror-sizer,
   .CodeMirror-lines {
     background: transparent;
+    padding: 6px 0;
+  }
+
+  .CodeMirror-code {
+    padding-right: 8px;
   }
 }
 
@@ -83,7 +93,7 @@ $textarea-rows: 15;
 
   .CodeMirror-hint {
     color: $text-primary;
-    padding: 4px 8px;
+    padding: 5px 10px;
     border-radius: 2px;
     cursor: pointer;
 
@@ -109,51 +119,57 @@ $textarea-rows: 15;
   }
 }
 
-// SQL syntax highlighting — 5 distinct hues
+// SQL syntax highlighting — One Dark Pro classic tokens
 .cm-s-default {
-  .cm-keyword { color: $accent-green; font-weight: 500; }
-  .cm-atom { color: $color-number; }
-  .cm-number { color: $color-number; }
-  .cm-def { color: $text-primary; }
-  .cm-variable { color: $text-primary; }
-  .cm-property { color: $text-primary; }
-  .cm-operator { color: $text-secondary; }
-  .cm-comment { color: $text-muted; font-style: italic; }
-  .cm-string { color: $color-string; }
-  .cm-string-2 { color: $color-string; }
-  .cm-builtin { color: $color-info; }
-  .cm-meta { color: $text-muted; }
-  .cm-bracket { color: $text-secondary; }
-  .cm-tag { color: $color-danger; }
-  .cm-attribute { color: $accent-green-light; }
-  .cm-qualifier { color: $accent-green; }
-  .cm-error { color: $color-danger; }
+  .cm-keyword { color: $odp-purple; font-weight: 500; }
+  .cm-atom { color: $odp-whiskey; }
+  .cm-number { color: $odp-whiskey; }
+  .cm-def { color: $odp-chalky; }
+  .cm-variable { color: $odp-coral; }
+  .cm-property { color: $odp-coral; }
+  .cm-operator { color: $odp-fountain-blue; }
+  .cm-comment { color: $odp-light-dark; font-style: italic; }
+  .cm-string { color: $odp-green; }
+  .cm-string-2 { color: $odp-green; }
+  .cm-builtin { color: $odp-malibu; }
+  .cm-meta { color: $odp-light-dark; }
+  .cm-bracket { color: $odp-light-white; }
+  .cm-tag { color: $odp-coral; }
+  .cm-attribute { color: $odp-chalky; }
+  .cm-qualifier { color: $odp-chalky; }
+  .cm-type { color: $odp-chalky; }
+  .cm-error {
+    color: $odp-coral;
+    background: rgba($odp-coral, 0.12);
+    border-radius: 2px;
+  }
 
   .CodeMirror-cursor {
-    border-left: 2px solid $text-primary;
+    border-left: 2px solid $odp-light-white;
   }
 
   .CodeMirror-selected {
-    background: rgba($accent-green, 0.12) !important;
+    background: rgba($odp-malibu, 0.18) !important;
   }
 
   .CodeMirror-focused .CodeMirror-selected {
-    background: rgba($accent-green, 0.18) !important;
+    background: rgba($odp-malibu, 0.24) !important;
   }
 
   .CodeMirror-line::selection,
   .CodeMirror-line > span::selection,
   .CodeMirror-line > span > span::selection {
-    background: rgba($accent-green, 0.18);
+    background: rgba($odp-malibu, 0.24);
   }
 
   .CodeMirror-activeline-background {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .CodeMirror-matchingbracket {
-    color: $accent-green !important;
+    color: $odp-fountain-blue !important;
     font-weight: 500;
     text-decoration: underline;
+    text-underline-offset: 2px;
   }
 }

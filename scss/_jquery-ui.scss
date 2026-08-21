@@ -1,5 +1,6 @@
 // ============================================================
 // Stygia — jQuery UI (datepicker, dialog, slider, autocomplete)
+// Prefer design tokens over invert filters
 // ============================================================
 
 body .ui-widget {
@@ -45,7 +46,17 @@ body .ui-state-highlight {
 }
 
 body .ui-icon {
-  filter: invert(0.85);
+  // Soften pack sprites without heavy invert(0.85)
+  filter: brightness(0) invert(0.78);
+  opacity: 0.9;
+}
+
+body .ui-state-hover .ui-icon,
+body .ui-state-focus .ui-icon,
+body .ui-state-active .ui-icon {
+  // Approximate accent-green #3ecf8e for sprite icons
+  filter: invert(72%) sepia(42%) saturate(557%) hue-rotate(103deg) brightness(94%) contrast(92%);
+  opacity: 1;
 }
 
 body #ui-datepicker-div {
@@ -54,27 +65,51 @@ body #ui-datepicker-div {
   border: 1px solid $border-default;
   border-radius: $border-radius;
   box-shadow: $shadow-md, $shadow-green;
-  padding: 0.5rem;
+  padding: 0.65rem;
 }
 
 .ui-datepicker {
+  .ui-datepicker-header {
+    background: transparent;
+    border: 0;
+    padding: 0.25rem 0 0.5rem;
+  }
+
   .ui-datepicker-title {
     color: $text-primary;
+    font-weight: 500;
   }
 
   .ui-datepicker-calendar {
     th {
       color: $text-muted;
       font-weight: 500;
+      font-size: 0.8em;
+      padding: 0.35em;
     }
 
-    td a {
-      text-align: center;
-      border-radius: $border-radius-sm;
+    td {
+      padding: 1px;
+
+      a {
+        text-align: center;
+        border-radius: $border-radius-sm;
+        padding: 0.35em;
+        min-width: 1.85em;
+        display: block;
+      }
     }
 
     .ui-datepicker-today a {
       border-color: $accent-green;
+      font-weight: 600;
+    }
+
+    .ui-datepicker-current-day a,
+    .ui-state-active {
+      background: $accent-green-deep !important;
+      border-color: $accent-green-deep !important;
+      color: $text-white !important;
     }
   }
 
@@ -82,11 +117,24 @@ body #ui-datepicker-div {
   .ui-datepicker-next {
     cursor: pointer;
     color: $text-secondary;
+    border-radius: $border-radius-sm;
+    top: 0.35rem;
+    width: 1.85em;
+    height: 1.85em;
 
     &:hover {
       background: $bg-hover;
-      border-radius: $border-radius-sm;
+      border: 0;
     }
+  }
+
+  select.ui-datepicker-month,
+  select.ui-datepicker-year {
+    background: $bg-surface;
+    border: 1px solid $border-strong;
+    color: $text-primary;
+    border-radius: $border-radius-sm;
+    padding: 0.15rem 0.35rem;
   }
 }
 
@@ -101,6 +149,7 @@ body #ui-datepicker-div {
     dt {
       height: 25px;
       margin-bottom: -25px;
+      color: $text-secondary;
     }
 
     dd {
@@ -130,16 +179,71 @@ body #ui-datepicker-div {
   border-radius: $border-radius-lg;
   box-shadow: $shadow-lg;
   color: $text-primary;
+  padding: 0;
 
   .ui-dialog-titlebar {
     background: $bg-surface-2;
     border-bottom: 1px solid $border-default;
     color: $text-primary;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    padding: 0.65rem 1rem;
+    font-weight: 500;
+  }
+
+  .ui-dialog-title {
+    font-size: $h3-font-size;
+  }
+
+  .ui-dialog-content {
+    padding: 1rem;
+    color: $text-primary;
+    background: $bg-surface;
   }
 
   .ui-dialog-buttonpane {
     background: $bg-surface;
     border-top: 1px solid $border-default;
+    margin-top: 0;
+    padding: 0.65rem 1rem;
+
+    .ui-button {
+      background: $bg-surface-2;
+      border: 1px solid $border-strong;
+      color: $text-primary;
+      border-radius: $border-radius-sm;
+      padding: 0.35rem 0.85rem;
+      min-height: 2rem;
+
+      &:hover {
+        background: $bg-hover;
+        border-color: $border-stronger;
+      }
+
+      &.ui-state-default:first-child,
+      &.btn-primary {
+        background: $accent-green-deep;
+        border-color: $accent-green-deep;
+        color: $text-white;
+        border-radius: $border-radius-pill;
+
+        &:hover {
+          background: $accent-green-deep-hover;
+          border-color: $accent-green-deep-hover;
+        }
+      }
+    }
+  }
+
+  .ui-dialog-titlebar-close {
+    border: 0;
+    background: transparent;
+    width: 1.85em;
+    height: 1.85em;
+    border-radius: $border-radius-sm;
+
+    &:hover {
+      background: $bg-hover;
+    }
   }
 }
 
@@ -147,6 +251,7 @@ body #ui-datepicker-div {
   background: $bg-surface-3;
   border: 0;
   border-radius: $border-radius-pill;
+  height: 0.4em;
 
   .ui-slider-range {
     background: $accent-green-deep;
@@ -156,6 +261,10 @@ body #ui-datepicker-div {
     background: $accent-green;
     border: 0;
     border-radius: 50%;
+    width: 1.1em;
+    height: 1.1em;
+    top: -0.4em;
+    filter: none;
   }
 }
 
@@ -165,14 +274,18 @@ body #ui-datepicker-div {
   border-radius: $border-radius-sm;
   box-shadow: $shadow-md;
   color: $text-primary;
+  padding: 0.25rem;
 
   .ui-menu-item-wrapper {
     color: $text-primary;
+    border-radius: $border-radius-sm;
+    padding: 0.35rem 0.65rem;
 
     &.ui-state-active {
       background: $bg-hover;
       border: 0;
       color: $accent-green;
+      margin: 0;
     }
   }
 }

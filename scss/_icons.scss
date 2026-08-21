@@ -32,6 +32,15 @@ button:hover .icon {
   background-color: $text-primary;
 }
 
+// Active tabs / pills — icon matches accent (readable on dark, not on green fill)
+.nav-link.active .icon,
+.nav-item.active .nav-link .icon,
+.nav-pills .nav-link.active .icon,
+.btn-primary .icon,
+.btn-success .icon {
+  background-color: currentColor;
+}
+
 .icon_fulltext {
   width: 50px;
   height: 19px;

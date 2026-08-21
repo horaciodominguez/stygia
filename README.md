@@ -18,9 +18,12 @@ A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired
 - **Stygia green** — `#3ecf8e` accent with a darker primary button (`#006239`) that stays readable
 - **Accessible** — `:focus-visible`, `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`; body/link/button pairs target WCAG AA
 - **RTL** — full `theme.rtl.css` via rtlcss(theme.css) plus Stygia overrides (SQL stays LTR)
-- **Typography** — Inter for UI, JetBrains Mono for SQL (local woff2, no CDN)
-- **SQL editor** — CodeMirror highlighting with five distinct hues (keyword, string, number, comment, error)
-- **Branding** — In-app: single-line `phpMyAdmin - Stygia`; portfolio: Stygia mark alone
+- **Typography** — bundled Inter (300–600) + JetBrains Mono (woff2, no CDN). If **FiraCode Nerd Font** is installed, it is used first (Propo for UI, Mono for SQL)
+- **Tabs** — phpMyAdmin `nav-pills` restyled as underline tabs; green pills stay on Go/Save only
+- **Typed cells** — browse/insert values colored with [One Dark Pro](https://github.com/Binaryify/OneDark-Pro) tokens (int, string, date, json, …)
+- **SQL editor** — CodeMirror highlighting on the same One Dark Pro palette
+- **Inspectable tokens** — Sass variables mirrored on `:root` as `--stygia-*`
+- **Branding** — in-app: river mark + `phpMyAdmin · STYGIA`; portfolio: Stygia mark alone
 - **jQuery UI** — dark ui-darkness base + Stygia color overrides for datepicker/dialogs
 
 ## Requirements
@@ -79,14 +82,15 @@ stygia/
 ├── jquery/              # Dark jQuery UI + images
 ├── scss/
 │   ├── theme.scss       # Entry
-│   ├── _rtl-overrides.scss
 │   ├── _variables.scss  # Design tokens
+│   ├── _tokens.scss     # :root --stygia-* custom properties
 │   ├── _fonts.scss
 │   ├── _icons.scss
+│   ├── _nav.scss        # Underline tabs (nav-pills)
+│   ├── _datatypes.scss  # One Dark Pro cell colors
 │   ├── _login.scss
 │   ├── _console.scss
-│   ├── _designer.scss
-│   ├── _jquery-ui.scss
+│   ├── _rtl-overrides.scss
 │   └── ...
 ├── docs/DESIGN.md       # Case study + contrast notes
 ├── theme.json
@@ -101,6 +105,10 @@ Edit `scss/_variables.scss`, then:
 npm run build
 ```
 
+Runtime-inspectable copies live on `:root` as `--stygia-*` (see `scss/_tokens.scss`).
+
+To force bundled Inter / JetBrains (ignore a local Nerd Font), remove the FiraCode names from `$font-family-base` / `$font-family-monospace` and rebuild.
+
 | Token | Hex | Role |
 | --- | --- | --- |
 | `$accent-green` | `#3ecf8e` | Links, focus, active nav |
@@ -109,11 +117,26 @@ npm run build
 | `$bg-surface` | `#1a1a1a` | Cards / inputs |
 | `$bg-popover` | `#242424` | Dropdowns / datepicker |
 | `$text-primary` | `#fafafa` | Body text |
-| `$text-secondary` | `#c4c4c4` | Secondary text |
+| `$text-secondary` | `#c8c8c8` | Secondary text |
 | `$color-success` | `#5dd39e` | Success (not the same as primary) |
 | `$color-danger` | `#f07178` | Errors |
 | `$color-warning` | `#f5a623` | Warnings |
 | `$color-info` | `#4ecdc4` | Info |
+
+### One Dark Pro (SQL + typed cells)
+
+| Token | Hex | Browse / SQL |
+| --- | --- | --- |
+| `$odp-whiskey` | `#d19a66` | int, real, numbers |
+| `$odp-green` | `#98c379` | strings |
+| `$odp-fountain-blue` | `#56b6c2` | dates / times |
+| `$odp-coral` | `#e06c75` | blob, hex, errors |
+| `$odp-malibu` | `#61afef` | json, geometry, builtins |
+| `$odp-purple` | `#c678dd` | bit, keywords |
+| `$odp-chalky` | `#e5c07b` | types, enum/set, UUID |
+| `$odp-light-dark` | `#7f848e` | comments, null-ish |
+
+Palette from [One Dark Pro](https://github.com/Binaryify/OneDark-Pro) (zhuangtongfa / Binaryify).
 
 ## Accessibility
 
@@ -122,17 +145,17 @@ Measured on `#121212` unless noted:
 | Pair | Ratio | AA |
 | --- | --- | --- |
 | `#fafafa` on `#121212` | ~18:1 | Pass (normal) |
-| `#c4c4c4` on `#121212` | ~11:1 | Pass (normal) |
-| `#a3a3a3` on `#121212` | ~7.6:1 | Pass (normal) |
+| `#c8c8c8` on `#121212` | ~11.5:1 | Pass (normal) |
+| `#b0b0b0` on `#121212` | ~8.6:1 | Pass (normal) |
 | `#3ecf8e` on `#121212` | ~9.4:1 | Pass (normal) |
 | `#fafafa` on `#006239` | ~7.2:1 | Pass (normal) |
-| `#8a8a8a` on `#121212` | ~5.4:1 | Pass (normal AA) |
+| `#949494` on `#121212` | ~6.0:1 | Pass (normal AA) |
 
 Keyboard focus uses a 2px green outline (`:focus-visible`). Reduced motion disables console and hover transitions. This theme cannot inject a skip link into phpMyAdmin HTML; the `.skip-link` class is styled if the host page provides one.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Fonts: SIL Open Font License (see [fonts/README.md](fonts/README.md)). jQuery UI dark pack adapted from [BooDark](https://github.com/adorade/boodark) (MIT).
+MIT — see [LICENSE](LICENSE). Fonts: SIL Open Font License (see [fonts/README.md](fonts/README.md)). jQuery UI dark pack adapted from [BooDark](https://github.com/adorade/boodark) (MIT). One Dark Pro token hues used by permission of the [MIT-licensed](https://github.com/Binaryify/OneDark-Pro/blob/master/LICENSE.md) VS Code theme.
 
 ## Credits
 
