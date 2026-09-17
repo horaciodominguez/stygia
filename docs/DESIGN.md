@@ -57,3 +57,7 @@ phpMyAdmin may still inject an `<h1>phpMyAdmin</h1>` (especially after legacy PN
 ## What this theme cannot do
 
 phpMyAdmin does not let a theme add a skip link, swap the server-rendered logo file, or restyle jqPlot canvases beyond CSS around them. Those remain host-app limits, not unfinished CSS.
+
+**Navigation tree highlight and pagination.** Marking the current table requires the tree to be synced (`#pma_navigation_tree.synced` — the link/unlink control next to Collapse all). Host JS (`Navigation.showCurrent`) only adds `li.selected` if that table is already loaded in the current `pageselector` page. It does **not** jump the pageselector to the page that contains the active table, and changing the pageselector does **not** re-run `showCurrent`. So a table that lives on page 2+ will not highlight after a normal browse (tree stays on page 1), and even if you open page 2 manually the row stays unmarked until something else triggers sync.
+
+Workaround for databases with many tables: raise the navi page size so tables fit on one page — in `config.inc.php` (`$cfg['MaxNavigationItems'] = 250;`) and/or Navigation panel settings → **Maximum items in branch**. Stygia styles `li.selected` strongly and makes the sync-off state obvious; it cannot rewrite host pagination.

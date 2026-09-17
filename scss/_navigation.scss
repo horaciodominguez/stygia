@@ -37,7 +37,42 @@
     &.pageselector {
       text-align: left;
       margin: 0;
-      padding: 4px 10px;
+      padding: 6px 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+      color: $text-muted;
+      font-size: 0.75rem;
+      line-height: 1.3;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 28px;
+        min-height: 28px;
+        padding: 0 6px;
+        color: $text-secondary;
+        border-radius: $border-radius-sm;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+          color: $text-primary;
+          background: $bg-hover;
+        }
+      }
+
+      select {
+        min-height: 28px;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+        color: $text-primary;
+        background: $bg-surface-2;
+        border: 1px solid $border-strong;
+        border-radius: $border-radius-sm;
+      }
     }
   }
 
@@ -191,11 +226,11 @@
       padding: 0;
       margin: 0;
       color: $text-secondary;
-      border: 0;
+      border: 1px solid transparent;
       border-radius: $border-radius-sm;
       background: transparent;
       box-sizing: border-box;
-      transition: color 0.15s ease, background 0.15s ease;
+      transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 
       &:hover {
         color: $text-primary;
@@ -215,6 +250,22 @@
 
     a:hover .icon {
       background-color: $text-primary;
+    }
+  }
+
+  // Sync off: tree will not mark the current table — make the control obvious
+  &:has(#pma_navigation_tree:not(.synced)) #pma_navigation_sync {
+    color: $accent-green;
+    border-color: rgba($accent-green, 0.45);
+    background: rgba($accent-green, 0.1);
+
+    .icon {
+      background-color: $accent-green;
+    }
+
+    &:hover {
+      background: rgba($accent-green, 0.16);
+      border-color: $accent-green;
     }
   }
 
@@ -395,15 +446,26 @@
     margin-bottom: 0;
     color: $text-secondary;
 
-    // Only the hovered/selected *row* — not every descendant link
-    &.activePointer,
-    &.selected {
+    // Hover only — quieter than persistent selected
+    &.activePointer:not(.selected) {
       color: $text-primary;
-      background-color: rgba($accent-green, 0.06);
+      background-color: $bg-hover;
+      border-radius: 0;
+      box-shadow: none;
+
+      > a {
+        color: $text-primary;
+      }
+    }
+
+    // Persistent current item (requires #pma_navigation_tree.synced + host showCurrent)
+    &.selected {
+      color: $accent-green;
+      background-color: rgba($accent-green, 0.28);
       border-radius: 0;
       border-left: 0;
       padding-left: 0;
-      box-shadow: inset 2px 0 0 $accent-green;
+      box-shadow: inset 4px 0 0 $accent-green;
 
       // Nested tree under a selected DB stays neutral (readable grey)
       > .list_container,
@@ -412,7 +474,7 @@
         box-shadow: none;
         color: $text-secondary;
 
-        > li {
+        > li:not(.selected):not(.activePointer) {
           background: transparent;
           box-shadow: none;
         }
@@ -428,20 +490,53 @@
 
       // Direct label of this row only
       > a {
-        color: $accent-green;
+        color: $accent-green !important;
+        font-weight: 600;
       }
     }
 
-    // Nested selected/hovered rows still get the accent
-    .list_container li.activePointer,
-    .list_container li.selected,
-    ul li.activePointer,
-    ul li.selected {
-      background-color: rgba($accent-green, 0.06);
-      box-shadow: inset 2px 0 0 $accent-green;
+    // Nested selected rows — win over parent DB nested resets
+    .list_container li.activePointer:not(.selected),
+    ul li.activePointer:not(.selected) {
+      background-color: $bg-hover;
+      box-shadow: none;
 
       > a {
-        color: $accent-green;
+        color: $text-primary;
+      }
+    }
+
+    .list_container li.selected,
+    ul li.selected {
+      background-color: rgba($accent-green, 0.28) !important;
+      box-shadow: inset 4px 0 0 $accent-green !important;
+
+      > a {
+        color: $accent-green !important;
+        font-weight: 600;
+      }
+    }
+
+    // Tables / views: unmistakable current row (full-row wash + bar)
+    &.nav_node_table.selected,
+    &.view.selected,
+    .list_container li.nav_node_table.selected,
+    .list_container li.view.selected {
+      background: linear-gradient(
+        90deg,
+        rgba($accent-green, 0.38) 0%,
+        rgba($accent-green, 0.22) 100%
+      ) !important;
+      box-shadow: inset 4px 0 0 $accent-green !important;
+      padding-block: 2px;
+
+      > a {
+        color: $accent-green !important;
+        font-weight: 600;
+      }
+
+      .icon {
+        background-color: $accent-green !important;
       }
     }
 
