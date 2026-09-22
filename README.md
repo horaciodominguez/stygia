@@ -3,6 +3,7 @@
 A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired by the mythological river Styx. Deep green accents, accessible contrast, RTL overrides, and a dense but calm admin UI.
 
 [![phpMyAdmin](https://img.shields.io/badge/phpMyAdmin-6.x-3ecf8e?style=flat-square)](https://www.phpmyadmin.net/)
+[![Version](https://img.shields.io/badge/version-2.2.0-3ecf8e?style=flat-square)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2e2e2e?style=flat-square)](LICENSE)
 [![Contrast](https://img.shields.io/badge/contrast-WCAG%20AA-3ecf8e?style=flat-square)](docs/DESIGN.md)
 
@@ -19,7 +20,7 @@ A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired
 - **Accessible** — `:focus-visible`, `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`; body/link/button pairs target WCAG AA
 - **RTL** — full `theme.rtl.css` via rtlcss(theme.css) plus Stygia overrides (SQL stays LTR)
 - **Typography** — bundled Inter (300–600) + JetBrains Mono (woff2, no CDN). If **FiraCode Nerd Font** is installed, it is used first (Propo for UI, Mono for SQL)
-- **Icon system** — Lucide icons adapted for CSS masks, 16px in the UI, accessible compact actions, generated visual catalog and automated audit
+- **Icon system** — Lucide (ISC) adapted for CSS masks, 16px glyphs in 28–32px controls, distinct Browse/Structure/Insert/Empty/Drop metaphors, generated catalog + `npm run icons:check`
 - **Tabs** — phpMyAdmin `nav-pills` restyled as underline tabs; green pills stay on Go/Save only
 - **Typed cells** — browse/insert values colored with [One Dark Pro](https://github.com/Binaryify/OneDark-Pro) tokens (int, string, date, json, …)
 - **SQL editor** — CodeMirror highlighting on the same One Dark Pro palette

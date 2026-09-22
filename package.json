@@ -1,6 +1,6 @@
 {
   "name": "stygia",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A dark, elegant theme for phpMyAdmin 6.x inspired by the mythological river Styx.",
   "private": true,
   "scripts": {

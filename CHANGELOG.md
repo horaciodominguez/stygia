@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 2.2.0 — 2026-09-22
+
+Lucide icon family + UI density polish; refreshed screenshots and release zip.
 
 - Replace hand-drawn functional icons with Lucide (ISC), normalized to a 24×24 mask-safe grid and shown at 16 px
 - Map every icon in `scripts/icon_map.json`; Browse, Structure, Insert, Empty, and Drop now use distinct metaphors, and Drop no longer reuses Minus
@@ -9,6 +11,7 @@
 - Make repeated table actions compact only when phpMyAdmin supplies a localized tooltip; preserve accessible text
 - Flatten row-action chrome, strengthen keyboard focus, disabled and forced-color states
 - Improve responsive tabs, page toolbar, wide tables and mobile sidebar bounds
+- Refresh `screen.png`, login/OG assets, and tour GIF for the Lucide UI
 
 ## 2.1.1 — 2026-08-21
 
