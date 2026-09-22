@@ -1,0 +1,908 @@
+{
+  "source": "lucide",
+  "license": "ISC",
+  "package": "lucide-static",
+  "icons": [
+    {
+      "file": "b_bookmark.svg",
+      "tier": "universal",
+      "notes": "Bookmark",
+      "lucide": "bookmark"
+    },
+    {
+      "file": "b_calendar.svg",
+      "tier": "universal",
+      "notes": "Calendar",
+      "lucide": "calendar"
+    },
+    {
+      "file": "b_column_add.svg",
+      "tier": "domain",
+      "notes": "Add column",
+      "aliasOf": "col-plus.svg"
+    },
+    {
+      "file": "b_dbstatistics.svg",
+      "tier": "domain",
+      "notes": "Database statistics",
+      "lucide": "chart-line"
+    },
+    {
+      "file": "b_docsql.svg",
+      "tier": "domain",
+      "notes": "SQL documentation",
+      "lucide": "scroll-text"
+    },
+    {
+      "file": "b_inline_edit.svg",
+      "tier": "universal",
+      "notes": "Inline edit",
+      "aliasOf": "edit.svg"
+    },
+    {
+      "file": "b_pdfdoc.svg",
+      "tier": "domain",
+      "notes": "PDF / text document",
+      "lucide": "file-text"
+    },
+    {
+      "file": "b_rename.svg",
+      "tier": "universal",
+      "notes": "Rename",
+      "lucide": "pen-line"
+    },
+    {
+      "file": "b_sdb.svg",
+      "tier": "domain",
+      "notes": "Small database",
+      "aliasOf": "database.svg"
+    },
+    {
+      "file": "b_sqldoc.svg",
+      "tier": "domain",
+      "notes": "SQL file",
+      "lucide": "file-code"
+    },
+    {
+      "file": "b_tipp.svg",
+      "tier": "universal",
+      "notes": "Tip",
+      "aliasOf": "lightbulb.svg"
+    },
+    {
+      "file": "caret-up-stop.svg",
+      "tier": "universal",
+      "notes": "Jump to top",
+      "lucide": "arrow-up-to-line"
+    },
+    {
+      "file": "charset.svg",
+      "tier": "domain",
+      "notes": "Character set",
+      "lucide": "a-large-small"
+    },
+    {
+      "file": "chart.svg",
+      "tier": "universal",
+      "notes": "Chart",
+      "lucide": "chart-column"
+    },
+    {
+      "file": "check.svg",
+      "tier": "universal",
+      "notes": "Success",
+      "lucide": "check"
+    },
+    {
+      "file": "chevron-left.svg",
+      "tier": "universal",
+      "notes": "Previous",
+      "lucide": "chevron-left"
+    },
+    {
+      "file": "chevron-right.svg",
+      "tier": "universal",
+      "notes": "Next",
+      "lucide": "chevron-right"
+    },
+    {
+      "file": "close.svg",
+      "tier": "universal",
+      "notes": "Close",
+      "lucide": "x"
+    },
+    {
+      "file": "col-drop.svg",
+      "tier": "domain",
+      "notes": "Drop column",
+      "lucide": "list-x"
+    },
+    {
+      "file": "col-minus.svg",
+      "tier": "domain",
+      "notes": "Remove column",
+      "lucide": "list-minus"
+    },
+    {
+      "file": "col-move.svg",
+      "tier": "universal",
+      "notes": "Move column",
+      "lucide": "move"
+    },
+    {
+      "file": "col-plus.svg",
+      "tier": "domain",
+      "notes": "Add column",
+      "lucide": "between-vertical-start"
+    },
+    {
+      "file": "col.svg",
+      "tier": "domain",
+      "notes": "Central columns",
+      "lucide": "columns-2"
+    },
+    {
+      "file": "comment.svg",
+      "tier": "universal",
+      "notes": "Comment",
+      "lucide": "message-square"
+    },
+    {
+      "file": "console.svg",
+      "tier": "universal",
+      "notes": "SQL console",
+      "lucide": "terminal"
+    },
+    {
+      "file": "database-engine.svg",
+      "tier": "domain",
+      "notes": "Database engine",
+      "lucide": "database-zap"
+    },
+    {
+      "file": "database-minus.svg",
+      "tier": "domain",
+      "notes": "Drop database",
+      "lucide": "database-minus"
+    },
+    {
+      "file": "database-plus.svg",
+      "tier": "domain",
+      "notes": "Create database",
+      "lucide": "database-plus"
+    },
+    {
+      "file": "database-vars.svg",
+      "tier": "domain",
+      "notes": "Server variables",
+      "lucide": "variable"
+    },
+    {
+      "file": "database.svg",
+      "tier": "domain",
+      "notes": "Database",
+      "lucide": "database"
+    },
+    {
+      "file": "databases.svg",
+      "tier": "domain",
+      "notes": "Database group",
+      "lucide": "layers"
+    },
+    {
+      "file": "designer.svg",
+      "tier": "domain",
+      "notes": "Designer / relations",
+      "lucide": "share-2"
+    },
+    {
+      "file": "drop.svg",
+      "tier": "domain",
+      "notes": "Drop",
+      "lucide": "trash-2"
+    },
+    {
+      "file": "edit.svg",
+      "tier": "universal",
+      "notes": "Edit",
+      "lucide": "pencil"
+    },
+    {
+      "file": "error.svg",
+      "tier": "universal",
+      "notes": "Error",
+      "lucide": "circle-alert"
+    },
+    {
+      "file": "event-plus.svg",
+      "tier": "domain",
+      "notes": "Add event",
+      "lucide": "calendar-plus"
+    },
+    {
+      "file": "event.svg",
+      "tier": "domain",
+      "notes": "Event",
+      "lucide": "calendar-clock"
+    },
+    {
+      "file": "export.svg",
+      "tier": "universal",
+      "notes": "Export",
+      "lucide": "download"
+    },
+    {
+      "file": "eye.svg",
+      "tier": "universal",
+      "notes": "Show",
+      "lucide": "eye"
+    },
+    {
+      "file": "eye_grey.svg",
+      "tier": "universal",
+      "notes": "Show, muted slot",
+      "aliasOf": "eye.svg"
+    },
+    {
+      "file": "favorite-alt.svg",
+      "tier": "universal",
+      "notes": "Favorite off",
+      "lucide": "star"
+    },
+    {
+      "file": "favorite.svg",
+      "tier": "universal",
+      "notes": "Favorite on",
+      "lucide": "star",
+      "fill": true
+    },
+    {
+      "file": "field-index-text.svg",
+      "tier": "domain",
+      "notes": "Fulltext index",
+      "lucide": "whole-word"
+    },
+    {
+      "file": "field-index-unique.svg",
+      "tier": "domain",
+      "notes": "Unique index",
+      "lucide": "fingerprint"
+    },
+    {
+      "file": "field-index.svg",
+      "tier": "domain",
+      "notes": "Index",
+      "lucide": "hash"
+    },
+    {
+      "file": "field-spatial.svg",
+      "tier": "domain",
+      "notes": "Spatial index",
+      "lucide": "map"
+    },
+    {
+      "file": "firstpage.svg",
+      "tier": "universal",
+      "notes": "First page",
+      "lucide": "chevrons-left"
+    },
+    {
+      "file": "flag-plus.svg",
+      "tier": "domain",
+      "notes": "Add trigger; Lucide has no flag-plus",
+      "lucide": "tag-plus"
+    },
+    {
+      "file": "flag.svg",
+      "tier": "domain",
+      "notes": "Trigger",
+      "lucide": "flag"
+    },
+    {
+      "file": "glasses.svg",
+      "tier": "brand",
+      "notes": "Legacy unmapped asset",
+      "preserve": true
+    },
+    {
+      "file": "globe-alt.svg",
+      "tier": "universal",
+      "notes": "Language / globe",
+      "lucide": "globe"
+    },
+    {
+      "file": "help-alt.svg",
+      "tier": "universal",
+      "notes": "Help",
+      "lucide": "circle-help"
+    },
+    {
+      "file": "help.svg",
+      "tier": "universal",
+      "notes": "Documentation",
+      "lucide": "book-open"
+    },
+    {
+      "file": "home.svg",
+      "tier": "universal",
+      "notes": "Home",
+      "lucide": "home"
+    },
+    {
+      "file": "host.svg",
+      "tier": "universal",
+      "notes": "Host",
+      "lucide": "server"
+    },
+    {
+      "file": "import.svg",
+      "tier": "universal",
+      "notes": "Import",
+      "lucide": "upload"
+    },
+    {
+      "file": "index-plus.svg",
+      "tier": "domain",
+      "notes": "Add index",
+      "lucide": "square-plus"
+    },
+    {
+      "file": "item.svg",
+      "tier": "universal",
+      "notes": "Tree bullet",
+      "lucide": "circle"
+    },
+    {
+      "file": "key-primary.svg",
+      "tier": "domain",
+      "notes": "Primary key",
+      "lucide": "key-round"
+    },
+    {
+      "file": "key.svg",
+      "tier": "domain",
+      "notes": "Key",
+      "lucide": "key"
+    },
+    {
+      "file": "language.svg",
+      "tier": "universal",
+      "notes": "Language",
+      "lucide": "languages"
+    },
+    {
+      "file": "lastpage.svg",
+      "tier": "universal",
+      "notes": "Last page",
+      "lucide": "chevrons-right"
+    },
+    {
+      "file": "lightbulb.svg",
+      "tier": "universal",
+      "notes": "Hint on",
+      "lucide": "lightbulb"
+    },
+    {
+      "file": "lightbulb_off.svg",
+      "tier": "universal",
+      "notes": "Hint off",
+      "lucide": "lightbulb-off"
+    },
+    {
+      "file": "link-broken.svg",
+      "tier": "universal",
+      "notes": "Unlink; same drawing as link — PMA swaps classes on hover; state is the green chrome when unsynced",
+      "aliasOf": "link.svg"
+    },
+    {
+      "file": "link.svg",
+      "tier": "universal",
+      "notes": "Link",
+      "lucide": "link-2"
+    },
+    {
+      "file": "lock-open.svg",
+      "tier": "universal",
+      "notes": "Unlock",
+      "lucide": "lock-open"
+    },
+    {
+      "file": "lock.svg",
+      "tier": "universal",
+      "notes": "Lock",
+      "lucide": "lock"
+    },
+    {
+      "file": "logo-login.svg",
+      "tier": "brand",
+      "notes": "Login mark",
+      "preserve": true
+    },
+    {
+      "file": "logo-mark.svg",
+      "tier": "brand",
+      "notes": "Portfolio mark",
+      "preserve": true
+    },
+    {
+      "file": "logo.svg",
+      "tier": "brand",
+      "notes": "In-app logo",
+      "preserve": true
+    },
+    {
+      "file": "logo_left.svg",
+      "tier": "brand",
+      "notes": "Sidebar logo",
+      "preserve": true
+    },
+    {
+      "file": "manual.svg",
+      "tier": "universal",
+      "notes": "SQL help",
+      "lucide": "book-open-text"
+    },
+    {
+      "file": "minus.svg",
+      "tier": "universal",
+      "notes": "Minus",
+      "lucide": "minus"
+    },
+    {
+      "file": "more.svg",
+      "tier": "universal",
+      "notes": "More",
+      "lucide": "ellipsis"
+    },
+    {
+      "file": "new_data.svg",
+      "tier": "domain",
+      "notes": "Data metaphor",
+      "aliasOf": "table-browse.svg"
+    },
+    {
+      "file": "new_data_hovered.svg",
+      "tier": "domain",
+      "notes": "Hover is CSS; same path",
+      "aliasOf": "new_data.svg"
+    },
+    {
+      "file": "new_data_selected.svg",
+      "tier": "domain",
+      "notes": "Data selected",
+      "lucide": "grid-2x2-check"
+    },
+    {
+      "file": "new_data_selected_hovered.svg",
+      "tier": "domain",
+      "notes": "Hover is CSS; same path",
+      "aliasOf": "new_data_selected.svg"
+    },
+    {
+      "file": "new_struct.svg",
+      "tier": "domain",
+      "notes": "Structure metaphor",
+      "aliasOf": "table.svg"
+    },
+    {
+      "file": "new_struct_hovered.svg",
+      "tier": "domain",
+      "notes": "Hover is CSS; same path",
+      "aliasOf": "new_struct.svg"
+    },
+    {
+      "file": "new_struct_selected.svg",
+      "tier": "domain",
+      "notes": "Structure selected",
+      "lucide": "list-checks"
+    },
+    {
+      "file": "new_struct_selected_hovered.svg",
+      "tier": "domain",
+      "notes": "Hover is CSS; same path",
+      "aliasOf": "new_struct_selected.svg"
+    },
+    {
+      "file": "nextpage.svg",
+      "tier": "universal",
+      "notes": "Next page",
+      "aliasOf": "chevron-right.svg"
+    },
+    {
+      "file": "notice.svg",
+      "tier": "universal",
+      "notes": "Notice",
+      "lucide": "bell"
+    },
+    {
+      "file": "optimize.svg",
+      "tier": "domain",
+      "notes": "Optimize",
+      "lucide": "gauge"
+    },
+    {
+      "file": "password.svg",
+      "tier": "universal",
+      "notes": "Password",
+      "lucide": "lock-keyhole"
+    },
+    {
+      "file": "pause.svg",
+      "tier": "universal",
+      "notes": "Pause",
+      "lucide": "pause"
+    },
+    {
+      "file": "php_sym.svg",
+      "tier": "domain",
+      "notes": "PHP",
+      "lucide": "code-xml"
+    },
+    {
+      "file": "plugin.svg",
+      "tier": "domain",
+      "notes": "Plugin",
+      "lucide": "puzzle"
+    },
+    {
+      "file": "plus.svg",
+      "tier": "universal",
+      "notes": "Plus",
+      "lucide": "plus"
+    },
+    {
+      "file": "preferences.svg",
+      "tier": "universal",
+      "notes": "Settings",
+      "lucide": "settings"
+    },
+    {
+      "file": "prevpage.svg",
+      "tier": "universal",
+      "notes": "Previous page",
+      "aliasOf": "chevron-left.svg"
+    },
+    {
+      "file": "print.svg",
+      "tier": "universal",
+      "notes": "Print",
+      "lucide": "printer"
+    },
+    {
+      "file": "reload.svg",
+      "tier": "universal",
+      "notes": "Reload",
+      "lucide": "refresh-cw"
+    },
+    {
+      "file": "replication.svg",
+      "tier": "domain",
+      "notes": "Replication",
+      "lucide": "git-branch"
+    },
+    {
+      "file": "report.svg",
+      "tier": "domain",
+      "notes": "Report",
+      "lucide": "file-chart-column"
+    },
+    {
+      "file": "routine-plus.svg",
+      "tier": "domain",
+      "notes": "Add routine",
+      "lucide": "file-braces"
+    },
+    {
+      "file": "routine.svg",
+      "tier": "domain",
+      "notes": "Routine",
+      "lucide": "square-function"
+    },
+    {
+      "file": "row-plus.svg",
+      "tier": "domain",
+      "notes": "Insert row",
+      "lucide": "list-plus"
+    },
+    {
+      "file": "s_attention.svg",
+      "tier": "universal",
+      "notes": "Warning",
+      "lucide": "triangle-alert"
+    },
+    {
+      "file": "s_cancel.svg",
+      "tier": "universal",
+      "notes": "Cancel",
+      "lucide": "circle-x"
+    },
+    {
+      "file": "s_cancel2.svg",
+      "tier": "universal",
+      "notes": "Forbidden",
+      "lucide": "ban"
+    },
+    {
+      "file": "s_collapseall.svg",
+      "tier": "universal",
+      "notes": "Collapse all",
+      "lucide": "chevrons-down-up"
+    },
+    {
+      "file": "s_fulltext.svg",
+      "tier": "domain",
+      "notes": "Fulltext",
+      "lucide": "scan-text"
+    },
+    {
+      "file": "s_info.svg",
+      "tier": "universal",
+      "notes": "Info",
+      "lucide": "info"
+    },
+    {
+      "file": "s_partialtext.svg",
+      "tier": "domain",
+      "notes": "Partial text",
+      "lucide": "type"
+    },
+    {
+      "file": "s_process.svg",
+      "tier": "universal",
+      "notes": "Process",
+      "lucide": "circle-dot"
+    },
+    {
+      "file": "s_really.svg",
+      "tier": "universal",
+      "notes": "Confirm",
+      "lucide": "octagon-alert"
+    },
+    {
+      "file": "s_sortable.svg",
+      "tier": "universal",
+      "notes": "Sortable",
+      "lucide": "arrow-up-down"
+    },
+    {
+      "file": "s_views.svg",
+      "tier": "domain",
+      "notes": "Views list",
+      "lucide": "layout-list"
+    },
+    {
+      "file": "save.svg",
+      "tier": "universal",
+      "notes": "Save",
+      "lucide": "save"
+    },
+    {
+      "file": "search-across.svg",
+      "tier": "universal",
+      "notes": "Search across",
+      "lucide": "text-search"
+    },
+    {
+      "file": "search-replace.svg",
+      "tier": "universal",
+      "notes": "Find and replace",
+      "lucide": "replace"
+    },
+    {
+      "file": "search.svg",
+      "tier": "universal",
+      "notes": "Search",
+      "lucide": "search"
+    },
+    {
+      "file": "select-all-arrow.svg",
+      "tier": "brand",
+      "notes": "Wide select-all chevron",
+      "preserve": true
+    },
+    {
+      "file": "server.svg",
+      "tier": "universal",
+      "notes": "Server status",
+      "lucide": "activity"
+    },
+    {
+      "file": "shredder.svg",
+      "tier": "domain",
+      "notes": "Empty",
+      "lucide": "eraser"
+    },
+    {
+      "file": "sign-out.svg",
+      "tier": "universal",
+      "notes": "Log out",
+      "lucide": "log-out"
+    },
+    {
+      "file": "sort-asc.svg",
+      "tier": "universal",
+      "notes": "Sort ascending",
+      "lucide": "arrow-up-narrow-wide"
+    },
+    {
+      "file": "sort-desc.svg",
+      "tier": "universal",
+      "notes": "Sort descending",
+      "lucide": "arrow-down-wide-narrow"
+    },
+    {
+      "file": "spinner.svg",
+      "tier": "brand",
+      "notes": "Ajax clock; CSS rotates the mask",
+      "preserve": true
+    },
+    {
+      "file": "sql.svg",
+      "tier": "domain",
+      "notes": "SQL",
+      "lucide": "code"
+    },
+    {
+      "file": "success.svg",
+      "tier": "universal",
+      "notes": "Same check",
+      "aliasOf": "check.svg"
+    },
+    {
+      "file": "sync.svg",
+      "tier": "universal",
+      "notes": "Sync",
+      "lucide": "arrow-left-right"
+    },
+    {
+      "file": "table-analyse.svg",
+      "tier": "domain",
+      "notes": "Analyze table",
+      "lucide": "chart-bar"
+    },
+    {
+      "file": "table-browse.svg",
+      "tier": "domain",
+      "notes": "Browse rows",
+      "lucide": "table"
+    },
+    {
+      "file": "table-engine.svg",
+      "tier": "domain",
+      "notes": "Table engine",
+      "lucide": "columns-3-cog"
+    },
+    {
+      "file": "table-minus.svg",
+      "tier": "domain",
+      "notes": "Delete table",
+      "lucide": "grid-2x2-x"
+    },
+    {
+      "file": "table-plus.svg",
+      "tier": "domain",
+      "notes": "Create table",
+      "lucide": "grid-2x2-plus"
+    },
+    {
+      "file": "table-view-plus.svg",
+      "tier": "domain",
+      "notes": "Create view",
+      "lucide": "copy-plus"
+    },
+    {
+      "file": "table-view.svg",
+      "tier": "domain",
+      "notes": "View",
+      "lucide": "table-2"
+    },
+    {
+      "file": "table.svg",
+      "tier": "domain",
+      "notes": "Structure / columns",
+      "lucide": "columns-3"
+    },
+    {
+      "file": "theme.svg",
+      "tier": "universal",
+      "notes": "Theme",
+      "lucide": "palette"
+    },
+    {
+      "file": "tree-collapse.svg",
+      "tier": "universal",
+      "notes": "Collapse",
+      "aliasOf": "triangle-down-1.svg"
+    },
+    {
+      "file": "tree-expand.svg",
+      "tier": "universal",
+      "notes": "Expand all",
+      "lucide": "unfold-vertical"
+    },
+    {
+      "file": "triangle-down-1.svg",
+      "tier": "universal",
+      "notes": "More / collapse",
+      "lucide": "chevron-down"
+    },
+    {
+      "file": "triangle-right-1.svg",
+      "tier": "universal",
+      "notes": "Play",
+      "lucide": "play"
+    },
+    {
+      "file": "undo.svg",
+      "tier": "universal",
+      "notes": "Undo",
+      "lucide": "undo-2"
+    },
+    {
+      "file": "user-minus.svg",
+      "tier": "universal",
+      "notes": "Remove user",
+      "lucide": "user-minus"
+    },
+    {
+      "file": "user-plus.svg",
+      "tier": "universal",
+      "notes": "Add user",
+      "lucide": "user-plus"
+    },
+    {
+      "file": "user-props.svg",
+      "tier": "domain",
+      "notes": "Privileges",
+      "lucide": "shield-check"
+    },
+    {
+      "file": "user.svg",
+      "tier": "universal",
+      "notes": "User",
+      "lucide": "user"
+    },
+    {
+      "file": "users.svg",
+      "tier": "universal",
+      "notes": "Users",
+      "lucide": "users"
+    },
+    {
+      "file": "version.svg",
+      "tier": "universal",
+      "notes": "Version",
+      "lucide": "history"
+    },
+    {
+      "file": "visibility-hidden.svg",
+      "tier": "universal",
+      "notes": "Hide",
+      "lucide": "eye-off"
+    },
+    {
+      "file": "visibility.svg",
+      "tier": "universal",
+      "notes": "Show",
+      "aliasOf": "eye.svg"
+    },
+    {
+      "file": "window.svg",
+      "tier": "universal",
+      "notes": "Window",
+      "lucide": "app-window"
+    },
+    {
+      "file": "windows.svg",
+      "tier": "universal",
+      "notes": "New window",
+      "lucide": "picture-in-picture-2"
+    },
+    {
+      "file": "wizard.svg",
+      "tier": "domain",
+      "notes": "Normalize wizard",
+      "lucide": "wand-sparkles"
+    }
+  ]
+}

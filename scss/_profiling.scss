@@ -16,36 +16,35 @@ th.header {
   }
 
   .sorticon {
-    width: 14px;
-    height: 14px;
+    width: $icon-size;
+    height: $icon-size;
     margin-left: 0.35rem;
     display: inline-block;
     vertical-align: middle;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    color: currentColor;
+    background-color: currentColor;
     opacity: 0.35;
   }
 }
 
 th.headerSortUp .sorticon {
-  background-image: url("../img/sort-desc.svg");
+  @include icon-mask("../img/sort-desc.svg");
   opacity: 0.85;
 }
 
 th.headerSortDown {
   .sorticon {
-    background-image: url("../img/sort-asc.svg");
+    @include icon-mask("../img/sort-asc.svg");
     opacity: 0.85;
   }
 
   &:hover .sorticon {
-    background-image: url("../img/sort-desc.svg");
+    @include icon-mask("../img/sort-desc.svg");
   }
 }
 
 th.headerSortUp:hover .sorticon {
-  background-image: url("../img/sort-asc.svg");
+  @include icon-mask("../img/sort-asc.svg");
 }
 
 // Full-bleed profiling block inside Bootstrap .container
@@ -111,8 +110,8 @@ th.headerSortUp:hover .sorticon {
     color: $text-muted;
 
     .icon {
-      width: 14px;
-      height: 14px;
+      width: $icon-size;
+      height: $icon-size;
       opacity: 0.7;
     }
 

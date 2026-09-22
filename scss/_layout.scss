@@ -144,7 +144,7 @@ div.liveChart,
 @media (max-width: 1024px) {
   #page_nav_icons {
     padding: 2px 6px;
-    gap: 2px;
+    gap: $space-1;
 
     .dropdown-toggle {
       padding: 4px 6px;
@@ -182,6 +182,15 @@ div.liveChart,
 
   #topmenucontainer {
     overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    box-shadow: inset -18px 0 14px -18px rgba($text-primary, 0.45);
+
+    .nav-pills {
+      width: max-content;
+      min-width: 100%;
+      flex-wrap: nowrap;
+    }
   }
 }
 
@@ -193,10 +202,27 @@ div.liveChart,
 
   #page_nav_icons {
     position: static;
-    float: right;
+    float: none;
     border-left: 0;
+    width: 100%;
     max-width: 100%;
-    flex-wrap: wrap;
+    height: auto;
+    min-height: $control-size-touch;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: $space-2;
+  }
+
+  #pma_navigation {
+    max-width: min(#{$navi-width}, 85vw);
+  }
+
+  #tableslistcontainer,
+  .table-responsive,
+  .table_results {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
   }
 
   div.upload_progress {

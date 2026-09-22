@@ -219,10 +219,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      min-height: 28px;
+      width: $control-size;
+      height: $control-size;
+      min-width: $control-size;
+      min-height: $control-size;
       padding: 0;
       margin: 0;
       color: $text-secondary;
@@ -241,15 +241,17 @@
 
     .icon {
       margin: 0 !important;
-      width: 14px !important;
-      height: 14px !important;
-      min-width: 14px !important;
-      min-height: 14px !important;
-      background-color: $text-secondary;
+      width: $icon-size !important;
+      height: $icon-size !important;
+      min-width: $icon-size !important;
+      min-height: $icon-size !important;
+      color: $text-secondary;
+      background-color: currentColor;
     }
 
     a:hover .icon {
-      background-color: $text-primary;
+      color: $text-primary;
+      background-color: currentColor;
     }
   }
 
@@ -260,7 +262,8 @@
     background: rgba($accent-green, 0.1);
 
     .icon {
-      background-color: $accent-green;
+      color: $accent-green;
+      background-color: currentColor;
     }
 
     &:hover {
@@ -536,7 +539,8 @@
       }
 
       .icon {
-        background-color: $accent-green !important;
+        color: $accent-green !important;
+        background-color: currentColor !important;
       }
     }
 
@@ -789,14 +793,31 @@ li.fast_filter {
   padding: 0;
   flex-wrap: wrap;
 
-  a,
-  .icon {
-    min-width: 32px;
-    min-height: 32px;
+  a {
+    min-width: $control-size;
+    min-height: $control-size;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: $border-radius-sm;
+    color: $text-secondary;
+    transition: color 0.15s ease, background 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $text-primary;
+      background: $bg-hover;
+      text-decoration: none;
+    }
+  }
+
+  .icon {
+    width: $icon-size;
+    height: $icon-size;
+    min-width: $icon-size;
+    min-height: $icon-size;
+    color: inherit;
+    background-color: currentColor;
   }
 
   select,
@@ -881,6 +902,19 @@ li.fast_filter {
         background: $bg-hover;
         color: $text-primary;
       }
+    }
+  }
+}
+
+@media (pointer: coarse) {
+  #pma_navigation {
+    #navipanellinks a,
+    .navItemControls a,
+    #navigation_controls a {
+      width: $control-size-touch;
+      height: $control-size-touch;
+      min-width: $control-size-touch;
+      min-height: $control-size-touch;
     }
   }
 }

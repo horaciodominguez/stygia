@@ -127,6 +127,38 @@
     vertical-align: middle;
     white-space: nowrap;
   }
+
+  input[type=submit] {
+    min-height: $control-size-dense;
+    margin: 0;
+    padding: $space-2;
+    color: $text-secondary;
+    background: transparent;
+    border: 0;
+    border-radius: $border-radius-sm;
+
+    &:hover,
+    &:focus-visible,
+    &.edit_mode_active {
+      color: $text-primary;
+      background: $bg-hover;
+    }
+  }
+
+  .btn-link {
+    color: $text-secondary;
+
+    &:hover,
+    &:focus-visible {
+      color: $text-primary;
+      background: $bg-hover;
+      text-decoration: none;
+    }
+  }
+
+  select {
+    margin: 0 $space-2;
+  }
 }
 
 // Foreign key / relation editors
@@ -261,8 +293,8 @@ $row-action-size: 1.7rem;
 
   .icon {
     margin: 0;
-    width: 13px;
-    height: 13px;
+    width: $icon-size;
+    height: $icon-size;
     background-color: $text-secondary;
     flex-shrink: 0;
   }
@@ -334,5 +366,77 @@ button.mult_submit:has(.ic_b_edit, .ic_b_insrow, .ic_b_drop) {
     --bs-btn-padding-x: 0;
     --bs-btn-padding-y: 0;
     text-decoration: none !important;
+  }
+}
+
+// Database structure listing: same icon-only chips as browse Edit/Copy/Delete.
+// phpMyAdmin uses both `.ic_b_*` and `.ic_bd_*` here and often omits `title`.
+#tableslistcontainer {
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+
+  td:has(.icon) {
+    white-space: nowrap;
+  }
+
+  a:has(.ic_b_favorite),
+  a:has(.ic_b_no_favorite) {
+    @include row-action-chip($color-warning);
+  }
+
+  a:has(.ic_b_browse),
+  a:has(.ic_b_sbrowse),
+  a:has(.ic_bd_browse),
+  a:has(.ic_bd_sbrowse) {
+    @include row-action-chip($accent-green);
+  }
+
+  a:has(.ic_b_props) {
+    @include row-action-chip($text-primary);
+  }
+
+  a:has(.ic_b_search),
+  a:has(.ic_b_select),
+  a:has(.ic_bd_select) {
+    @include row-action-chip($color-info);
+  }
+
+  a:has(.ic_b_insrow),
+  a:has(.ic_bd_insrow) {
+    @include row-action-chip($accent-green);
+  }
+
+  a:has(.ic_b_empty),
+  a:has(.ic_bd_empty) {
+    @include row-action-chip($color-warning);
+  }
+
+  a:has(.ic_b_drop),
+  a:has(.ic_bd_drop),
+  a:has(.ic_bd_deltbl) {
+    @include row-action-chip(darken($color-danger, 8%));
+  }
+
+  // phpMyAdmin wraps each action in span.text-nowrap (icon img + label).
+  // Clip only the label. Clipping the wrapper also hides the icon.
+  a:has(.ic_b_favorite, .ic_b_no_favorite, .ic_b_browse, .ic_b_sbrowse, .ic_bd_browse, .ic_bd_sbrowse, .ic_b_props, .ic_b_search, .ic_b_select, .ic_bd_select, .ic_b_insrow, .ic_bd_insrow, .ic_b_empty, .ic_bd_empty, .ic_b_drop, .ic_bd_drop, .ic_bd_deltbl) {
+    .text-nowrap > :not(.icon) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  td.text-end,
+  td.numeric,
+  td[data-type="int"],
+  td[data-type="real"] {
+    font-variant-numeric: tabular-nums;
   }
 }

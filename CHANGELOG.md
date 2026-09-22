@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Replace hand-drawn functional icons with Lucide (ISC), normalized to a 24×24 mask-safe grid and shown at 16 px
+- Map every icon in `scripts/icon_map.json`; Browse, Structure, Insert, Empty, and Drop now use distinct metaphors, and Drop no longer reuses Minus
+- Show the generated catalog at 12/16/20/24 px with a disabled sample, and audit mappings, duplicates, and mask safety
+- Standardize 16px glyphs in 28–32px controls, with 44px coarse-pointer targets
+- Make repeated table actions compact only when phpMyAdmin supplies a localized tooltip; preserve accessible text
+- Flatten row-action chrome, strengthen keyboard focus, disabled and forced-color states
+- Improve responsive tabs, page toolbar, wide tables and mobile sidebar bounds
+
 ## 2.1.1 — 2026-08-21
 
 Modal and field-editor polish: datepicker/timepicker, jQuery UI dialogs, Bootstrap overlays.

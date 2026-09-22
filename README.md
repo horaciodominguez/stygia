@@ -19,6 +19,7 @@ A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired
 - **Accessible** — `:focus-visible`, `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`; body/link/button pairs target WCAG AA
 - **RTL** — full `theme.rtl.css` via rtlcss(theme.css) plus Stygia overrides (SQL stays LTR)
 - **Typography** — bundled Inter (300–600) + JetBrains Mono (woff2, no CDN). If **FiraCode Nerd Font** is installed, it is used first (Propo for UI, Mono for SQL)
+- **Icon system** — Lucide icons adapted for CSS masks, 16px in the UI, accessible compact actions, generated visual catalog and automated audit
 - **Tabs** — phpMyAdmin `nav-pills` restyled as underline tabs; green pills stay on Go/Save only
 - **Typed cells** — browse/insert values colored with [One Dark Pro](https://github.com/Binaryify/OneDark-Pro) tokens (int, string, date, json, …)
 - **SQL editor** — CodeMirror highlighting on the same One Dark Pro palette
@@ -58,6 +59,13 @@ The GitHub clone compiles without a phpMyAdmin tree:
 ```bash
 npm install
 npm run build
+```
+
+Regenerate or audit the icon family:
+
+```bash
+npm run icons:generate
+npm run icons:check
 ```
 
 Watch mode:
@@ -156,6 +164,8 @@ Keyboard focus uses a 2px green outline (`:focus-visible`). Reduced motion disab
 ## License
 
 MIT — see [LICENSE](LICENSE). Fonts: SIL Open Font License (see [fonts/README.md](fonts/README.md)). jQuery UI dark pack adapted from [BooDark](https://github.com/adorade/boodark) (MIT). One Dark Pro token hues used by permission of the [MIT-licensed](https://github.com/Binaryify/OneDark-Pro/blob/master/LICENSE.md) VS Code theme.
+
+Functional icons are adapted from [Lucide](https://lucide.dev) (`lucide-static`, ISC). Copyright (c) Lucide Contributors. Portions Copyright (c) Cole Bemis 2013-2023 as part of Feather (MIT). Permission to use, copy, modify, and/or distribute Lucide for any purpose with or without fee is granted, provided that this copyright notice and the ISC permission notice appear with the copies. The generated SVG files carry the same notice.
 
 ## Credits
 

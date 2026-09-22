@@ -41,10 +41,11 @@
     transition: color 0.15s ease, background 0.15s ease;
 
     .icon {
-      width: 14px;
-      height: 14px;
+      width: $icon-size;
+      height: $icon-size;
       margin: 0;
-      background-color: $text-muted;
+      color: $text-muted;
+      background-color: currentColor;
     }
 
     &:hover,
@@ -53,7 +54,8 @@
       background: $bg-hover;
 
       .icon {
-        background-color: $text-primary;
+        color: currentColor;
+        background-color: currentColor;
       }
     }
   }
@@ -94,7 +96,8 @@
       background: transparent;
 
       .icon {
-        background-color: $accent-green;
+        color: currentColor;
+        background-color: currentColor;
       }
     }
   }
@@ -189,6 +192,15 @@
   border-bottom: 1px solid $border-default;
   background: $bg-body;
 
+  .nav-pills {
+    border-bottom: 0;
+  }
+
+  .navbar-nav.nav-pills,
+  .nav.nav-pills {
+    width: 100%;
+  }
+
   .menucontainer {
     padding: 0;
     text-align: left;
@@ -212,7 +224,7 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 2px;
+  gap: $space-1;
   min-height: $navbar-height;
   height: $navbar-height;
   background: $bg-body;
@@ -230,7 +242,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: $space-1;
     width: auto;
     padding: 0;
     margin: 0;
@@ -239,14 +251,14 @@
 
   .dropdown-toggle {
     color: $text-secondary;
-    border-color: $border-strong;
+    border: 1px solid $border-strong;
     background: transparent;
     padding: 0;
-    font-size: 0.8em;
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
+    font-size: $font-size-ui-xs;
+    width: $control-size;
+    height: $control-size;
+    min-width: $control-size;
+    min-height: $control-size;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -261,11 +273,13 @@
 
     .icon {
       margin: 0;
-      width: 14px;
-      height: 14px;
-      min-width: 14px;
-      min-height: 14px;
+      width: $icon-size;
+      height: $icon-size;
+      min-width: $icon-size;
+      min-height: $icon-size;
       padding: 0;
+      color: currentColor;
+      background-color: currentColor;
     }
   }
 
@@ -276,16 +290,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
+    width: $control-size;
+    height: $control-size;
+    min-width: $control-size;
+    min-height: $control-size;
     padding: 0;
     margin: 0;
     line-height: 0;
     vertical-align: middle;
     border-radius: $border-radius-sm;
     color: $text-secondary;
+    border: 1px solid $border-strong;
+    background: transparent;
     box-sizing: border-box;
     text-decoration: none;
     transition: color 0.15s ease, background-color 0.15s ease;
@@ -299,22 +315,24 @@
 
     .icon {
       display: block;
-      width: 14px !important;
-      height: 14px !important;
-      min-width: 14px !important;
-      min-height: 14px !important;
+      width: $icon-size !important;
+      height: $icon-size !important;
+      min-width: $icon-size !important;
+      min-height: $icon-size !important;
       margin: 0 !important;
       padding: 0 !important;
       box-sizing: border-box;
       vertical-align: middle;
-      background-color: $text-secondary;
+      color: currentColor;
+      background-color: currentColor;
       background-origin: padding-box;
       border-radius: 0;
     }
 
     &:hover .icon,
     &:focus-visible .icon {
-      background-color: $text-primary;
+      color: currentColor;
+      background-color: currentColor;
     }
   }
 }
@@ -326,4 +344,18 @@
 
 #lock_page_icon:empty {
   display: none;
+}
+
+@media (pointer: coarse) {
+  #page_nav_icons {
+    .dropdown-toggle,
+    #goto_pagetop,
+    #lock_page_icon,
+    #page_settings_icon {
+      width: $control-size-touch;
+      height: $control-size-touch;
+      min-width: $control-size-touch;
+      min-height: $control-size-touch;
+    }
+  }
 }

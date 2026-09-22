@@ -5,7 +5,7 @@ phpMyAdmin is a dense, all-day tool. Most “dark themes” for it are inverted 
 ## Constraints
 
 - No theme JS. phpMyAdmin owns the DOM.
-- Icons are CSS `mask-image` over SVG so hover and semantic states can recolor a single asset.
+- Icons are CSS `mask-image` over SVG so hover and semantic states can recolor a single asset. Functional drawings come from Lucide (24×24) and are shown at 16 px.
 - Compilation must work from a GitHub clone (`npm install && npm run build`), not only from inside a phpMyAdmin tree.
 
 ## Decisions
@@ -35,7 +35,11 @@ phpMyAdmin may still inject an `<h1>phpMyAdmin</h1>` (especially after legacy PN
 
 **Console opens on purpose.** Expanding `#pma_console_container` on `:hover` made the query log jump while moving the pointer toward the bottom of the page. It now opens only with `.expanded`. Width is `left: $navi-width; right: 0` (not `calc(100% - 240px)`). Collapsed, the prompt ghost is hidden.
 
-**Hit targets without inflating desktop.** Chrome and sidebar glyphs stay ~14px inside 28–32px flex boxes. Tree item controls (`.navItemControls`) stay hidden until hover/`focus-within` so the navi tree does not shout.
+**Hit targets without inflating desktop.** Functional glyphs are drawn on Lucide's 24×24 grid and painted at 16 px inside 28–32px flex boxes. Under `pointer: coarse`, repeated icon controls grow to 44 px. Tree item controls (`.navItemControls`) stay hidden until hover/`focus-within` so the navi tree does not shout.
+
+**One Lucide family, not invented pictograms.** Functional SVGs are adapted from [Lucide](https://lucide.dev) (ISC): `viewBox="0 0 24 24"`, round 2 px strokes, no filters, transforms, or embedded rasters. `scripts/icon_map.json` maps each file to a Lucide id or to an alias. Browse is `table`, Structure is `columns-3`, Insert is `list-plus`, Empty is `eraser`, Drop is `trash-2`. Filled shapes are reserved for toggled states such as a favorite. Hover does not get its own drawing. `scripts/gen_icons.py --check` validates the map, mask safety, and undeclared duplicates; `docs/icons.html` shows every icon at 12/16/20/24 px plus a disabled sample.
+
+**Icon-only is conditional.** Repeated row actions become compact only when phpMyAdmin supplies a localized `title`, while their text remains in the accessibility tree. Hover and keyboard focus expose the same tooltip. Rare or ambiguous actions keep visible text when the host provides no accessible tooltip. Empty and Drop use different drawings and destructive color appears on interaction, not as permanent visual noise.
 
 ## Before / after (v1 → v2)
 

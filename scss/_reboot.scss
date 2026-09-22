@@ -151,6 +151,14 @@ hr {
 
   .icon {
     forced-color-adjust: auto;
+    color: CanvasText;
+    background-color: CanvasText;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline-color: Highlight;
   }
 }
 

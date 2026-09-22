@@ -18,9 +18,10 @@
   gap: 0.35em;
 
   .icon {
-    width: 14px;
-    height: 14px;
+    width: $icon-size;
+    height: $icon-size;
     margin: 0;
+    color: currentColor;
     background-color: currentColor;
   }
 
@@ -226,9 +227,11 @@ input[type=submit].go-btn {
 // Icon-only buttons — compact chrome, not oversized hit slabs
 .btn:has(> .icon:only-child),
 .btn.btn-icon {
-  min-width: 1.85rem;
-  min-height: 1.85rem;
-  padding: 0.3rem;
+  width: $control-size;
+  height: $control-size;
+  min-width: $control-size;
+  min-height: $control-size;
+  padding: $space-1;
 }
 
 .dt-button {
@@ -253,9 +256,12 @@ input[type=submit].go-btn {
   }
 }
 
-.navigation {
-  input[type=submit] {
-    border-radius: $border-radius-sm;
-    min-height: 1.85rem;
+@media (pointer: coarse) {
+  .btn:has(> .icon:only-child),
+  .btn.btn-icon {
+    width: $control-size-touch;
+    height: $control-size-touch;
+    min-width: $control-size-touch;
+    min-height: $control-size-touch;
   }
 }

@@ -12,24 +12,30 @@
   -webkit-mask-position: center;
   mask-position: center;
   background-image: none;
-  background-color: $text-secondary;
+  background-color: currentColor;
 }
 
 .icon {
   display: inline-block;
+  flex: 0 0 auto;
   margin: 0;
   padding: 0;
-  width: 16px;
-  height: 16px;
+  width: $icon-size;
+  height: $icon-size;
   background-repeat: no-repeat;
-  background-color: $text-secondary;
+  color: inherit;
+  background-color: currentColor;
   vertical-align: middle;
 }
 
 a:hover > .icon,
 .nav-link:hover .icon,
-button:hover .icon {
-  background-color: $text-primary;
+button:hover .icon,
+a:focus-visible > .icon,
+.nav-link:focus-visible .icon,
+button:focus-visible .icon {
+  color: inherit;
+  background-color: currentColor;
 }
 
 // Active tabs / pills — icon matches accent (readable on dark, not on green fill)
@@ -39,6 +45,16 @@ button:hover .icon {
 .btn-primary .icon,
 .btn-success .icon {
   background-color: currentColor;
+}
+
+.btn:disabled .icon,
+.btn.disabled .icon,
+.nav-link.disabled .icon,
+a.disabled .icon,
+[aria-disabled="true"] .icon {
+  color: $text-disabled;
+  background-color: currentColor;
+  opacity: 0.72;
 }
 
 .icon_fulltext {
@@ -68,7 +84,7 @@ button:hover .icon {
 .ic_b_search { @include icon-mask("../img/search.svg"); }
 .ic_b_select { @include icon-mask("../img/search-across.svg"); }
 .ic_b_find_replace { @include icon-mask("../img/search-replace.svg"); }
-.ic_b_drop { @include icon-mask("../img/minus.svg"); }
+.ic_b_drop { @include icon-mask("../img/drop.svg"); }
 .ic_b_empty { @include icon-mask("../img/shredder.svg"); }
 .ic_b_insrow { @include icon-mask("../img/row-plus.svg"); }
 .ic_b_move { @include icon-mask("../img/col-move.svg"); }
@@ -201,8 +217,8 @@ button:hover .icon {
 .ic_s_status { @include icon-mask("../img/server.svg"); }
 .ic_b_versions { @include icon-mask("../img/version.svg"); }
 .ic_s_lang { @include icon-mask("../img/language.svg"); }
-.ic_s_link { @include icon-mask("../img/link.svg"); }
-.ic_s_unlink { @include icon-mask("../img/link-broken.svg"); }
+.ic_s_link,
+.ic_s_unlink { @include icon-mask("../img/link.svg"); }
 .ic_s_lock { @include icon-mask("../img/lock.svg"); }
 .ic_s_unlock { @include icon-mask("../img/lock-open.svg"); }
 .ic_s_loggoff { @include icon-mask("../img/sign-out.svg"); }
@@ -241,7 +257,7 @@ button:hover .icon {
 .ic_lightbulb_off { @include icon-mask("../img/lightbulb_off.svg"); }
 .ic_more {
   @include icon-mask("../img/more.svg");
-  width: 13px;
+  width: $icon-size-compact;
 }
 
 .ic_new_data { @include icon-mask("../img/new_data.svg"); }
@@ -278,7 +294,7 @@ button:hover .icon {
 .ic_bd_browse,
 .ic_bd_sbrowse { @include icon-mask("../img/table-browse.svg"); }
 .ic_bd_deltbl { @include icon-mask("../img/table-minus.svg"); }
-.ic_bd_drop { @include icon-mask("../img/minus.svg"); }
+.ic_bd_drop { @include icon-mask("../img/drop.svg"); }
 .ic_bd_edit { @include icon-mask("../img/edit.svg"); }
 .ic_bd_empty { @include icon-mask("../img/shredder.svg"); }
 .ic_bd_export { @include icon-mask("../img/export.svg"); }

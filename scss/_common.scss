@@ -299,14 +299,6 @@ tr:last-child td.condition {
   margin: 5px 2px;
 }
 
-// --- Heading ---
-#topmenucontainer {
-  padding: 0 1em;
-  width: 100%;
-}
-
-
-
 #page_settings_modal,
 #pma_navigation_settings {
   display: none;
@@ -630,8 +622,8 @@ div {
   &::before {
     content: "";
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: $icon-size;
+    height: $icon-size;
     margin-right: 8px;
     border: 2px solid rgba($color-warning, 0.28);
     border-top-color: $color-warning;
@@ -952,58 +944,6 @@ table#index_columns {
   margin-left: 2em;
 }
 
-// --- Navigation (top) ---
-.navigation {
-  margin: 0.8em 0;
-  border-radius: $border-radius;
-  background: $bg-surface;
-  border: 1px solid $border-default;
-
-  td {
-    margin: 0;
-    padding: 0;
-    vertical-align: middle;
-    white-space: nowrap;
-  }
-
-  input {
-    &[type=submit] {
-      background: none;
-      border: 0;
-      margin: 0;
-      padding: 0.8em 0.5em;
-      border-radius: 0;
-      color: $text-secondary;
-      transition: background 0.15s ease, color 0.15s ease;
-
-      &:hover {
-        color: $text-primary;
-        cursor: pointer;
-        background: $bg-hover;
-      }
-    }
-
-    &.edit_mode_active {
-      color: $text-primary;
-      cursor: pointer;
-      background: $bg-active;
-    }
-  }
-
-  .btn-link {
-    color: $text-secondary;
-    &:hover {
-      color: $text-primary;
-      background-image: none;
-      text-decoration: none;
-    }
-  }
-
-  select {
-    margin: 0 0.8em;
-  }
-}
-
 .navigation_separator {
   color: $text-muted;
   display: inline-block;
@@ -1309,15 +1249,6 @@ div#page_content div {
   }
 }
 
-// --- Tableslistcontainer ---
-#tableslistcontainer table.data {
-  border-top: 0;
-}
-
-
-
-
-
 // --- Page errors ---
 #pma_errors {
   clear: both;
@@ -1344,26 +1275,6 @@ table.data {
 // --- Clearfix ---
 .clearfloat {
   clear: both;
-}
-
-// --- Improved Go Button (primary only — not every .btn) ---
-input[type=submit].btn-primary,
-.go-btn,
-button.btn-primary {
-  border-radius: $border-radius-pill;
-  font-weight: 500;
-  padding: 0.4rem 1.2rem;
-  font-size: 0.875rem;
-  transition: all 0.15s ease;
-  background: $accent-green-deep;
-  border: 1px solid $accent-green-deep;
-  color: $text-white;
-  cursor: pointer;
-
-  &:hover {
-    background: $accent-green-deep-hover;
-    border-color: $accent-green-deep-hover;
-  }
 }
 
 input[type=submit].btn-secondary,

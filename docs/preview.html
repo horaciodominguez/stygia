@@ -37,6 +37,27 @@
     h1 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.02em; }
     main { max-width: 920px; margin: 0 auto; padding: 28px; }
     h2 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .demo-tabs, .toolbar, .actions { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+    .demo-tabs { border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .demo-tabs a {
+      min-height: 38px; padding: 8px 12px; display: inline-flex; align-items: center; gap: 8px;
+      color: #c8c8c8; border-bottom: 2px solid transparent;
+    }
+    .demo-tabs a.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+    .icon {
+      width: 16px; height: 16px; display: block; flex: none; background: currentColor;
+      mask: var(--icon) center/contain no-repeat; -webkit-mask: var(--icon) center/contain no-repeat;
+    }
+    .icon-button {
+      width: 32px; height: 32px; padding: 0; border: 1px solid #3d3d3d; border-radius: 6px;
+      background: transparent; color: #c8c8c8; display: inline-flex; align-items: center; justify-content: center;
+    }
+    .icon-button:hover, .icon-button:focus-visible { color: var(--accent); background: rgba(62,207,142,.1); }
+    .icon-button.danger:hover, .icon-button.danger:focus-visible { color: var(--danger); background: rgba(240,113,120,.1); }
+    .type-scale { display: grid; gap: 6px; margin-bottom: 24px; }
+    .type-scale strong { font-size: 18px; font-weight: 500; }
+    .type-scale span { color: #c8c8c8; }
+    .type-scale small { color: var(--muted); font-size: 12px; }
     .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
     .swatch { width: 72px; }
     .swatch i { display: block; height: 40px; border-radius: 8px; border: 1px solid var(--border); }
@@ -71,6 +92,19 @@
     <h1>Style preview</h1>
   </header>
   <main>
+    <h2>Navigation hierarchy</h2>
+    <nav class="demo-tabs" aria-label="Preview navigation">
+      <a class="active" href="#"><i class="icon" style="--icon:url(../img/table.svg)"></i>Structure</a>
+      <a href="#"><i class="icon" style="--icon:url(../img/sql.svg)"></i>SQL</a>
+      <a href="#"><i class="icon" style="--icon:url(../img/search.svg)"></i>Search</a>
+      <a href="#"><i class="icon" style="--icon:url(../img/export.svg)"></i>Export</a>
+    </nav>
+    <h2>Typography</h2>
+    <div class="type-scale">
+      <strong>Primary heading · 18px / 500</strong>
+      <span>Interface text · 14px / 400</span>
+      <small>Metadata and helper text · 12px / 400</small>
+    </div>
     <h2>Palette</h2>
     <div class="swatches">
       <div class="swatch"><i style="background:#3ecf8e"></i><span>accent</span></div>
@@ -85,6 +119,13 @@
     <div class="row">
       <button>Go</button>
       <button class="sec">Cancel</button>
+    </div>
+    <h2>Compact row actions</h2>
+    <div class="actions">
+      <button class="icon-button" title="Browse" aria-label="Browse"><i class="icon" style="--icon:url(../img/table-browse.svg)"></i></button>
+      <button class="icon-button" title="Edit" aria-label="Edit"><i class="icon" style="--icon:url(../img/edit.svg)"></i></button>
+      <button class="icon-button" title="Insert" aria-label="Insert"><i class="icon" style="--icon:url(../img/row-plus.svg)"></i></button>
+      <button class="icon-button danger" title="Drop" aria-label="Drop"><i class="icon" style="--icon:url(../img/drop.svg)"></i></button>
     </div>
     <h2>Table</h2>
     <table>

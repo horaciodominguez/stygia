@@ -59,6 +59,16 @@
   --stygia-shadow-lg: #{$shadow-lg};
   --stygia-shadow-focus: #{$shadow-focus};
 
+  // Rhythm
+  --stygia-space-1: #{$space-1};
+  --stygia-space-2: #{$space-2};
+  --stygia-space-3: #{$space-3};
+  --stygia-space-4: #{$space-4};
+  --stygia-icon-size: #{$icon-size};
+  --stygia-control-dense: #{$control-size-dense};
+  --stygia-control-size: #{$control-size};
+  --stygia-control-touch: #{$control-size-touch};
+
   // Layout
   --stygia-navi-width: #{$navi-width};
   --stygia-navbar-height: #{$navbar-height};

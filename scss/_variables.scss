@@ -73,6 +73,20 @@ $shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
 $shadow-focus: 0 0 0 2px rgba(62, 207, 142, 0.28);
 $shadow-green: 0 8px 24px rgba(0, 98, 57, 0.18);
 
+// Spacing, icon, and control rhythm
+$space-1: 0.25rem;  // 4px
+$space-2: 0.5rem;   // 8px
+$space-3: 0.75rem;  // 12px
+$space-4: 1rem;     // 16px
+$space-5: 1.5rem;   // 24px
+$space-6: 2rem;     // 32px
+
+$icon-size-compact: 12px;
+$icon-size: 16px;
+$control-size-dense: 28px;
+$control-size: 32px;
+$control-size-touch: 44px;
+
 // phpMyAdmin layout variables
 $navi-width: 240px;
 $navi-color: $text-primary;
@@ -108,6 +122,8 @@ $link-hover-decoration: underline;
 $font-family-base: "FiraCode Nerd Font Propo", "FiraCode Nerd Font", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $font-family-monospace: "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
 $font-size-base: 0.875rem;
+$font-size-ui-sm: 0.8125rem;
+$font-size-ui-xs: 0.75rem;
 $font-weight-lighter: 300;
 $font-weight-light: 300;
 $font-weight-normal: 400;
