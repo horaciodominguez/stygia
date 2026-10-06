@@ -3,7 +3,7 @@
 A dark, elegant theme for [phpMyAdmin](https://www.phpmyadmin.net/) 6.x inspired by the mythological river Styx. Deep green accents, accessible contrast, RTL overrides, and a dense but calm admin UI.
 
 [![phpMyAdmin](https://img.shields.io/badge/phpMyAdmin-6.x-3ecf8e?style=flat-square)](https://www.phpmyadmin.net/)
-[![Version](https://img.shields.io/badge/version-2.2.0-3ecf8e?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.2.1-3ecf8e?style=flat-square)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2e2e2e?style=flat-square)](LICENSE)
 [![Contrast](https://img.shields.io/badge/contrast-WCAG%20AA-3ecf8e?style=flat-square)](docs/DESIGN.md)
 

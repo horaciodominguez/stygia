@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.1 — 2026-10-06
+
+Chrome alignment patch for the page toolbar.
+
+- Center the settings glyph inside `#page_settings_icon` when phpMyAdmin forces `display: inline` on the icon
+- Keep the empty lock slot hidden until a page edit inserts the icon
+- Refresh `screen.png` for the theme picker and README
+
 ## 2.2.0 — 2026-09-22
 
 Lucide icon family + UI density polish; refreshed screenshots and release zip.

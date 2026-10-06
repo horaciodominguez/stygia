@@ -335,6 +335,19 @@
       background-color: currentColor;
     }
   }
+
+  // phpMyAdmin shows this control with style="display: inline".
+  // A flex item with that value computes to block, so the glyph
+  // sits at the top-left instead of the center of the button.
+  #page_settings_icon {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      inset: 0;
+      margin: auto !important;
+    }
+  }
 }
 
 #page_settings_icon {
@@ -342,7 +355,9 @@
   display: none;
 }
 
-#lock_page_icon:empty {
+// Wins over #page_nav_icons #lock_page_icon { display: inline-flex }
+// so the lock slot stays hidden until a page edit inserts the icon.
+#page_nav_icons #lock_page_icon:empty {
   display: none;
 }
 
