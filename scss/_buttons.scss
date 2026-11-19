@@ -224,14 +224,32 @@ input[type=submit].go-btn {
   gap: 0.25rem;
 }
 
-// Icon-only buttons — compact chrome, not oversized hit slabs
-.btn:has(> .icon:only-child),
+// Icon-only buttons — only when explicitly marked.
+// Do NOT use :has(> .icon:only-child): phpMyAdmin JS often does
+// .html(icon + "Label"), and text nodes do not count as children, so
+// that selector falsely squares buttons like Monitor Pause/Settings.
 .btn.btn-icon {
   width: $control-size;
   height: $control-size;
   min-width: $control-size;
   min-height: $control-size;
   padding: $space-1;
+}
+
+// Monitor / toolbars: keep labeled buttons in a readable row
+#monitorPauseResumeButton,
+.mb-3.d-print-none > .btn {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  white-space: nowrap;
+}
+
+.mb-3.d-print-none {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .dt-button {
@@ -257,7 +275,6 @@ input[type=submit].go-btn {
 }
 
 @media (pointer: coarse) {
-  .btn:has(> .icon:only-child),
   .btn.btn-icon {
     width: $control-size-touch;
     height: $control-size-touch;

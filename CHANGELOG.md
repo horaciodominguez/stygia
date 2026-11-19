@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.3 — 2026-11-19
+
+Regression fixes for Monitor toolbar and Import ajax spinner.
+
+- Stop squaring labeled buttons: drop `:has(> .icon:only-child)` (phpMyAdmin JS injects icon + text without a wrapper)
+- Keep Monitor Pause/Settings/Instructions in a flex row with `width: auto`
+- Respect `class="hide"` on `ajax_clock_small.gif` / `.ajaxIcon` so Import does not show a permanent spinner
+
 ## 2.2.2 — 2026-11-19
 
 Bugfix after advanced audit: Bootstrap dark tokens, RTL console, icons, GIS, CI.

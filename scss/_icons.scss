@@ -327,10 +327,10 @@ a.disabled .icon,
 }
 
 // Host JS injects <img src="…/ajax_clock_small.gif"> / .ajaxIcon without .ic_*
+// Do not set display here — Import etc. use class="hide" until work starts.
 img.ajaxIcon,
 img[src$="ajax_clock_small.gif"] {
   @include icon-mask("../img/spinner.svg");
-  display: inline-block;
   width: $icon-size;
   height: $icon-size;
   padding: 0;
@@ -342,6 +342,12 @@ img[src$="ajax_clock_small.gif"] {
   object-fit: none;
   object-position: -9999px -9999px;
   color: transparent;
+}
+
+// Beat attribute selector specificity so .hide still wins
+img.ajaxIcon.hide,
+img[src$="ajax_clock_small.gif"].hide {
+  display: none;
 }
 
 .ic_s_partialtext { @include icon-mask("../img/s_partialtext.svg"); }
