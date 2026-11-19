@@ -29,19 +29,38 @@ fs.mkdirSync(themeDir, { recursive: true });
 for (const item of include) {
   const src = path.join(root, item);
   if (!fs.existsSync(src)) continue;
-  const dest = path.join(themeDir, item);
-  fs.cpSync(src, dest, { recursive: true });
+  fs.cpSync(src, path.join(themeDir, item), { recursive: true });
 }
 
-const result = spawnSync(
-  "powershell",
-  [
-    "-NoProfile",
-    "-Command",
-    `Compress-Archive -Path '${themeDir}' -DestinationPath '${zipPath}' -Force`,
-  ],
-  { stdio: "inherit" }
-);
+function zipWithZipCli() {
+  return spawnSync("zip", ["-r", zipPath, "stygia"], {
+    cwd: staging,
+    stdio: "inherit",
+    shell: false,
+  });
+}
+
+function zipWithPowerShell() {
+  return spawnSync(
+    "powershell",
+    [
+      "-NoProfile",
+      "-Command",
+      `Compress-Archive -Path '${themeDir}' -DestinationPath '${zipPath}' -Force`,
+    ],
+    { stdio: "inherit" }
+  );
+}
+
+let result;
+if (process.platform === "win32") {
+  result = zipWithPowerShell();
+} else {
+  result = zipWithZipCli();
+  if (result.error || result.status !== 0) {
+    console.error("zip CLI failed; install zip or run on a runner with it");
+  }
+}
 
 fs.rmSync(staging, { recursive: true, force: true });
 process.exit(result.status === null ? 1 : result.status);

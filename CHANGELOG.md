@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.2.2 — 2026-11-19
+
+Bugfix after advanced audit: Bootstrap dark tokens, RTL console, icons, GIS, CI.
+
+- Override Bootstrap `[data-bs-theme=dark]` body/secondary/tertiary colors so `.text-muted` / `.text-body-secondary` stay readable on `#121212`
+- Fix `.form-select` chevron contrast (`$form-select-indicator-color`) and dark `$mark-bg`
+- RTL: console margin only on desktop; keep mobile `margin: 0`
+- Console message actions visible on `:focus-within` (keyboard), not hover alone
+- Preserve semantic icon tints (PK, status, ajax) under link/button hover
+- Mask host-injected `ajax_clock_small.gif` / `.ajaxIcon` and nav throbber with Stygia spinner
+- Hide `#page_settings_icon` until JS shows it (FOUC)
+- Ship GIS mini PNG controls (`west/east/north/south/zoom-*-mini.png`) for `gis_visualization.js`
+- CI: `setup-python` for `icons:check`; package via portable `npm run zip`
+
 ## 2.2.1 — 2026-10-06
 
 Chrome alignment patch for the page toolbar.

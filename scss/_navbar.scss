@@ -355,6 +355,12 @@
   display: none;
 }
 
+// Match lock specificity so the gear stays hidden until JS shows it
+// (inline style from phpMyAdmin beats this; avoids FOUC of always-visible flex).
+#page_nav_icons #page_settings_icon {
+  display: none;
+}
+
 // Wins over #page_nav_icons #lock_page_icon { display: inline-flex }
 // so the lock slot stays hidden until a page edit inserts the icon.
 #page_nav_icons #lock_page_icon:empty {

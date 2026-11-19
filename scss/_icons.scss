@@ -28,12 +28,15 @@
   vertical-align: middle;
 }
 
-a:hover > .icon,
-.nav-link:hover .icon,
-button:hover .icon,
-a:focus-visible > .icon,
-.nav-link:focus-visible .icon,
-button:focus-visible .icon {
+// Hover/focus reset must not wipe semantic tints (PK, status, ajax clock)
+$stygia-semantic-icons: ".ic_b_primary, .ic_bd_primary, .ic_s_okay, .ic_s_error, .ic_s_success, .ic_s_attention, .ic_s_info, .ic_ajax_clock_small";
+
+a:hover > .icon:not(#{$stygia-semantic-icons}),
+.nav-link:hover .icon:not(#{$stygia-semantic-icons}),
+button:hover .icon:not(#{$stygia-semantic-icons}),
+a:focus-visible > .icon:not(#{$stygia-semantic-icons}),
+.nav-link:focus-visible .icon:not(#{$stygia-semantic-icons}),
+button:focus-visible .icon:not(#{$stygia-semantic-icons}) {
   color: inherit;
   background-color: currentColor;
 }
@@ -322,6 +325,25 @@ a.disabled .icon,
   background-color: $accent-green;
   animation: stygia-spin 0.7s linear infinite;
 }
+
+// Host JS injects <img src="…/ajax_clock_small.gif"> / .ajaxIcon without .ic_*
+img.ajaxIcon,
+img[src$="ajax_clock_small.gif"] {
+  @include icon-mask("../img/spinner.svg");
+  display: inline-block;
+  width: $icon-size;
+  height: $icon-size;
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  background-color: $accent-green;
+  animation: stygia-spin 0.7s linear infinite;
+  // Hide GIF pixels; mask paints the spinner
+  object-fit: none;
+  object-position: -9999px -9999px;
+  color: transparent;
+}
+
 .ic_s_partialtext { @include icon-mask("../img/s_partialtext.svg"); }
 .ic_s_fulltext { @include icon-mask("../img/s_fulltext.svg"); }
 .ic_s_process { @include icon-mask("../img/s_process.svg"); }

@@ -30,9 +30,19 @@ textarea.codemirror-textarea {
   width: 100%;
 }
 
-#pma_console {
-  margin-left: 0;
-  margin-right: $navi-width;
+// Desktop only — do not defeat @_console.scss @media (max-width: 768px)
+@media (min-width: 769px) {
+  #pma_console {
+    margin-left: 0;
+    margin-right: $navi-width;
+  }
+}
+
+@media (max-width: 768px) {
+  #pma_console {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 // Tree block connectors use absolute left; nudge for RTL

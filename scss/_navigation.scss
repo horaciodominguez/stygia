@@ -361,12 +361,17 @@
   }
 
   > img.throbber {
+    @include icon-mask("../img/spinner.svg");
     display: block;
     margin: 0.5em auto;
     width: 20px;
     height: 20px;
-    background: url("../img/spinner.svg") center / contain no-repeat;
+    padding: 0;
     border: 0;
+    background-color: $accent-green;
+    animation: stygia-spin 0.7s linear infinite;
+    object-fit: none;
+    object-position: -9999px -9999px;
   }
 }
 

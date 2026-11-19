@@ -275,8 +275,38 @@ $form-select-bg: $bg-surface;
 $form-select-border-color: $border-strong;
 $form-select-color: $text-primary;
 $form-select-focus-border-color: $accent-green;
+// Default BS uses $gray-800 (#1a1a1a after our remap) — invisible on dark selects
+$form-select-indicator-color: $text-muted;
 
 $form-text-color: $text-secondary;
+
+// Highlight / mark — avoid Bootstrap $yellow-100 flash on dark surfaces
+$mark-bg: rgba($accent-green, 0.22);
+$mark-color: $text-primary;
+
+// Bootstrap [data-bs-theme=dark] (theme.json colorModes: dark).
+// Without these, $body-color-dark defaults to $gray-300 (#4a4a4a) → ~2.1:1 on #121212.
+$body-color-dark: $text-primary;
+$body-bg-dark: $bg-body;
+$body-secondary-color-dark: $text-secondary;
+$body-secondary-bg-dark: $bg-surface;
+$body-tertiary-color-dark: $text-muted;
+$body-tertiary-bg-dark: $bg-surface-2;
+$body-emphasis-color-dark: $text-white;
+$border-color-dark: $border-default;
+$link-color-dark: $accent-green;
+$link-hover-color-dark: $accent-green-light;
+$mark-color-dark: $text-primary;
+$mark-bg-dark: rgba($accent-green, 0.22);
+$form-select-indicator-color-dark: $text-muted;
+$primary-text-emphasis-dark: $accent-green-light;
+$secondary-text-emphasis-dark: $text-secondary;
+$success-text-emphasis-dark: $color-success;
+$info-text-emphasis-dark: $color-info;
+$warning-text-emphasis-dark: $color-warning;
+$danger-text-emphasis-dark: $color-danger;
+$light-text-emphasis-dark: $text-primary;
+$dark-text-emphasis-dark: $text-primary;
 
 $nav-tabs-border-color: $border-default;
 $nav-tabs-link-hover-bg: transparent;

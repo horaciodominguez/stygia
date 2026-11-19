@@ -23,6 +23,10 @@ jobs:
           node-version: 20
           cache: npm
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install
         run: npm ci
 
@@ -30,10 +34,7 @@ jobs:
         run: npm run build
 
       - name: Package zip
-        run: |
-          mkdir -p dist/stygia
-          cp -r css img fonts jquery scss docs theme.json screen.png README.md LICENSE CHANGELOG.md package.json dist/stygia/
-          (cd dist && zip -r ../stygia.zip stygia)
+        run: npm run zip
 
       - uses: actions/upload-artifact@v4
         with:
